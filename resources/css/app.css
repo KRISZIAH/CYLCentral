@@ -1,0 +1,51 @@
+
+@import "tailwindcss";
+
+
+@import '@fontsource/poppins';
+
+
+/* Root variables */
+:root {
+    /* Font */
+    --font-family: 'Poppins', sans-serif;
+
+
+    /* Color palette */
+    --green1: #003D2B;
+    --green2: #21A179;
+    --mint: #E4F1EA;
+    --brown: #C56659;
+    --black: #141414;
+    --white: #FFFFFF;
+
+
+    /* Gradients */
+    --gradient-green: linear-gradient(135deg, var(--green1), var(--green2));
+    --gradient-brown: linear-gradient(135deg, #A24E43, var(--brown));
+}
+
+
+/* Global styles */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* Bold for headings */
+}
+
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; /* Regular for paragraphs */
+}
+
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
