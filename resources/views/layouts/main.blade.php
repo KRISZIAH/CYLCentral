@@ -20,9 +20,10 @@
     @vite('resources/css/membershippage.css')
     @vite('resources/css/editprofile.css')
     @vite('resources/css/eventcatalog.css')
-    @vite('resources/css/dashborad_analytics.css')
     @vite('resources/css/files.css')
     @vite('resources/css/eventpages.css')
+    @vite('resources/css/dashboard_analytics.css')
+
 
 
     <!-- Bootstrap and Icons -->
@@ -61,7 +62,7 @@
     @vite('resources/js/eventcatalog.js')
     @vite('resources/js/charts/totalevents.js')
     @vite('resources/js/charts/partnergroups.js')
-    @vite('resources/js/charts/regularmembers.js')
+    @vite('resources/js/charts/regularmember.js')
     @vite('resources/js/eventpages.js')
 </body>
 </html>

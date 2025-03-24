@@ -4,7 +4,6 @@
 @section('content')
 
 <!-- Events Section -->
-<!-- Events Section -->
 <div class="container mt-5">
     <div class="card">
         <div class="card-header bg-custom text-white text-center">

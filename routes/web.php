@@ -23,9 +23,6 @@ Route::get('/events', function () {
     return view('eventcatalog'); 
 });
 
-Route::get('/analytics', function () {
-    return view('dashboard_analytics'); 
-});
 
 Route::get('/files', function () {
     return view('files'); 
@@ -35,4 +32,9 @@ Route::get('/pages', function () {
     return view('eventpages'); 
 })->name('eventpage');
 
+
+// Routes for admin dashboard
+Route::get('/analytics', function () {
+    return view('dashboard_analytics'); 
+});
 

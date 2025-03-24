@@ -1,58 +1,81 @@
-@charset "UTF-8";
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
 
-body {
-    margin: 0;
-    font-family: var(--bs-body-font-family);
-    font-size: var(--bs-body-font-size);
-    font-weight: var(--bs-body-font-weight);
-    line-height: var(--bs-body-line-height);
-    color: var(--green1);
-    background-color: #E4F1EA;
+/* breadCrumb */
+.breadcrumb-item a {
+    font-weight: bold;
+    color: var(--brown); 
+    font-size: 30px;
 }
-
-h1, .h1 {
-    font-size: calc(1.375rem + 1.5vw);
-}
-@media (min-width: 1200px) {
-    h1, .h1 {
-        font-size: 2.5rem;
-    }
-}
-
-p {
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
-
-a {
-    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+.breadcrumb-item a:hover {
     text-decoration: underline;
 }
-a:hover {
-    --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
+.breadcrumb-item.active {
+    color: var(--green1);
+    font-size: 20px;
+    font-weight: semi-bold;
+}
+.profile-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.nav-icons i {
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 15px;
+    color: var(--green1);
+}
+.user-info {
+    display: flex;
+    align-items: center;
+}
+.user-name {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-left: 10px;
+}
+.user-role {
+    font-size: 12px;
+    color: gray;
 }
 
+/* Main Panel */
+.header{
+    padding: 20px;
+}
+
+.header h3{
+    color: var(--green1);
+}
+
+.header h6{
+    color: var(--green1);
+    
+}
+
+/* Cards */
 .card {
     background-color: var(--green1);
-    border-radius: 20px;
+    border-radius: 20px!important;
     color: var(--brown);
     transition: background 0.25s ease;
+    margin-bottom: 20px;
+    
 }
+
 .card .card-body {
-    padding: 1.25rem;
+    padding: 20px 30px;
+    border: none !important;
 }
+
 .card.card-tale {
     background: #FFFFFF;
     color: #C56659;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    border: none !important;
+    border-radius: 10px !important; 
 }
+
 .card.card-tale .head {
     font-weight: 1000;
     background: linear-gradient(90deg, #006d47, #00a86b);
@@ -60,6 +83,9 @@ a:hover {
     -webkit-text-fill-color: transparent;
 }
 
+.card-body img{
+    border: none !important;
+}
 .btn-export-pdf {
     background: linear-gradient(45deg, #b05d4c, #c56659);
     color: white;

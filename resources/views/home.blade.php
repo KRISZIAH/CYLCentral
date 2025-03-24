@@ -7,7 +7,7 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="hero-section" style="background-image: url('{{ asset('images/hero-bg.png') }}');">
+<section class="hero-section" style="background-image: url('{{ asset('img/web-bg/hero.png') }}');">
     <div class="container text-center text-white">
         <h1>Shaping <span class="text-coral">youth leaders</span> for<br>a sustainable future</h1>
         <a href="#" class="btn btn-primary mt-4">LEARN MORE</a>
@@ -53,12 +53,12 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6 mb-4 mb-md-0">
-                <img src="{{ asset('images/welcome.png') }}" alt="CYLC Event" class="img-fluid rounded">
+                <img src="{{ asset('img/welcome.png') }}" alt="CYLC Event" class="img-fluid rounded">
             </div>
             <div class="col-md-6">
                 <div class="welcome-content">
                     <h6>Welcome to</h6>
-                    <img src="{{ asset('images/cylcentral-logo3.png') }}" alt="CYLC logo" class="img">
+                    <img src="{{ asset('img/cylcentral-logo3.png') }}" alt="CYLC logo" class="img">
                     <p>
                         CYLCentral is the official event and membership portal of the Cordillera Young Leaders Club (CYLC)—a platform where young leaders connect, grow, and create meaningful change in their communities. Whether you're looking to participate in events, develop leadership skills, or collaborate with like-minded individuals, you've come to the right place.
                     </p>
@@ -114,7 +114,7 @@
             </div>
             <div class="col-md-4">
                 <div class="feature-image">
-                    <img src="{{ asset('images/get-involve.png') }}" alt="Leadership Event" class="img-fluid rounded">
+                    <img src="{{ asset('img/get-involve.png') }}" alt="Leadership Event" class="img-fluid rounded">
                 </div>
             </div>
         </div>
@@ -130,13 +130,13 @@
                 <div class="services-images">
                     <div class="row">
                         <div class="col-12 mb-4">
-                            <img src="{{ asset('images/service-1.png') }}" alt="Service" class="img-fluid rounded">
+                            <img src="{{ asset('img/service-1.png') }}" alt="Service" class="img-fluid rounded">
                         </div>
                         <div class="col-6 pr-2">
-                            <img src="{{ asset('images/service-2.png') }}" alt="Service" class="img-fluid rounded">
+                            <img src="{{ asset('img/service-2.png') }}" alt="Service" class="img-fluid rounded">
                         </div>
                         <div class="col-6 pl-2">
-                            <img src="{{ asset('images/service-3.png') }}" alt="Service" class="img-fluid rounded">
+                            <img src="{{ asset('img/service-3.png') }}" alt="Service" class="img-fluid rounded">
                         </div>
                     </div>
                 </div>
