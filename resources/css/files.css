@@ -16,10 +16,10 @@
 
 /* Sidebar Container */
 .sidebar {
-    background-color:var(--white); 
-    border-radius: 10px;
+    background:var(--white); 
+    border-radius: 20px;
     width: 280px; 
-    height: 80%;
+    height: 100%;
 }
 
 
@@ -101,21 +101,21 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    border-radius: 10px;
 }
 
 .file-item {
+    border-radius: 10px;
     flex: 1 1 calc(25% - 20px); /* Adjust for 4 items per row */
     max-width: calc(25% - 20px); /* Ensures consistent spacing */
 }
 
-.card-body{
-    background-color:var(--mint);
-    border-radius: 10px;
-}
 
-/* Card Hover */
+/* Card  */
 .card-body {
-    border: none;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: var(--mint);
     transition: transform 0.2s ease-in-out;
 }
 
@@ -156,7 +156,7 @@
 }
 
 .file-item img {
-    width: 60px;
+    width: 100px;
     height: auto;
     display: block;
     margin: 0 auto;

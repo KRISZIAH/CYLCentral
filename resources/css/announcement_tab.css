@@ -1,0 +1,62 @@
+
+.container h2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: var(--brown); 
+}
+
+
+
+/* Announcement Cards */
+.announcement-card {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.announcement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.announcement-card .card-body {
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+.announcement-card h5 {
+    font-weight: bold;
+    color: var(--green1); 
+}
+
+/* Modal Styling */
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    background-color: #dc3545; /* Bootstrap danger color */
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.modal-footer {
+    justify-content: center;
+}
+
+/* Button Styles */
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    transition: background 0.2s;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}

@@ -23,6 +23,7 @@
     @vite('resources/css/files.css')
     @vite('resources/css/eventpages.css')
     @vite('resources/css/dashboard_analytics.css')
+    @vite('resources/css/announcement_tab.css')
 
 
 
@@ -64,5 +65,6 @@
     @vite('resources/js/charts/partnergroups.js')
     @vite('resources/js/charts/regularmember.js')
     @vite('resources/js/eventpages.js')
+    @vite('resources/js/announcement_tab.js')
 </body>
 </html>

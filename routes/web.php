@@ -32,9 +32,19 @@ Route::get('/pages', function () {
     return view('eventpages'); 
 })->name('eventpage');
 
+Route::get('/announcements', function () {
+    return view('announcement_tab'); 
+})->name('eventpage');
+
 
 // Routes for admin dashboard
 Route::get('/analytics', function () {
     return view('dashboard_analytics'); 
 });
+
+
+
+use App\Http\Controllers\AnnouncementController;
+
+Route::get('/announcements', [AnnouncementController::class, 'index']);
 

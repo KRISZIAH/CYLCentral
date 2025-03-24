@@ -20,7 +20,9 @@ export default defineConfig({
                 'resources/css/files.css',
                 'resources/js/files.js',
                 'resources/css/eventpages.css',
-                'resources/js/eventpages.js'
+                'resources/js/eventpages.js',
+                'resources/css/announcement_tab.css',
+                'resources/js/announcement_tab.js',
             ],
             refresh: true,
         }),

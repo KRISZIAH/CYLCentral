@@ -9,7 +9,7 @@
         <div class="card-header bg-custom text-white text-center">
             <h4><span>EPISODE 42:</span> LABOR LAWS ON COMPENSATION, BENEFITS, LEAVES AND GRIEVANCES</h4>
         </div>
-        <div class="card-body">
+        <div class="card-body1">
             <div class="row">
                 <div class="col-md-4 text-center">
                     <img src="{{ asset('img/posters/poster1.png') }}" alt="Static Image" class="static-img">

@@ -62,7 +62,7 @@
               <div class="row">
                 <div class="col-md-12 grid-margin stretch-card">
                     <div class="card card-tale">
-                        <div class="card-body d-flex align-items-center justify-content-between">
+                        <div class="card-body d-flex bg-white align-items-center justify-content-between">
                             <div>
                               <p class="fw-bold">Flagship Programs</p>
                               <p class="fs-30 fw-bold head">9</p>
@@ -103,7 +103,7 @@
             <div class="row">
               <div class="col-md-6 grid-margin stretch-card">
                 <div class="card card-tale">
-                    <div class="card-body">
+                    <div class="card-body bg-white">
                         <div class="d-flex justify-content-between">
                             <p class="fw-bold">Total Events</p>
                             <p class="text-muted fst-italic">Last updated at 16:04</p>
@@ -126,7 +126,7 @@
                 <div class="row">
                   <div class="col-md-6 mb-4 stretch-card transparent">
                     <div class="card card-tale">
-                      <div class="card-body">
+                      <div class="card-body bg-white">
                         <p class="mb-4 text-muted fst-italic">Last updated at 16:04</p>
                         <p>Total Funds</p>
                         <p class="fs-30 mb-2 head">
@@ -140,7 +140,7 @@
                   <!-- Average booking (Total Booking) -->
                   <div class="col-md-6 mb-4 stretch-card transparent">
                     <div class="card card-tale">
-                      <div class="card-body ">
+                      <div class="card-body bg-white ">
                         <p class="mb-4 text-muted fst-italic">Last updated at 16:04</p>
                         <p>Average Rating</p>
                         <p class="fs-30 mb-2 head">
@@ -161,7 +161,7 @@
                 <div class="row">
                   <div class="col-md-6 mb-4 stretch-card transparent">
                     <div class="card card-tale">
-                        <div class="card-body">
+                        <div class="card-body bg-white">
                             <p class="mb-4 text-muted fst-italic">Last updated at 16:04</p>
                             <p>Physical Reach</p>
                             <div class="d-flex align-items-center">
@@ -181,7 +181,7 @@
                   <!-- Digital Reach (Total Booking) -->
                   <div class="col-md-6 mb-4 stretch-card transparent">
                     <div class="card card-tale">
-                      <div class="card-body ">
+                      <div class="card-body bg-white">
                         <p class="mb-4 text-muted fst-italic">Last updated at 16:04</p>
                         <p>Digital reach</p>
                         <p class="fs-30 mb-2 head">
@@ -201,7 +201,7 @@
               <!-- Partner Groups -->
               <div class="col-md-6 grid-margin stretch-card">
                 <div class="card card-tale">
-                    <div class="card-body">
+                    <div class="card-body bg-white">
                         <div class="d-flex justify-content-between">
                             <p class="fw-bold">Partner Groups</p>
                             <p class="text-muted fst-italic">Last updated at 16:04</p>
@@ -218,8 +218,8 @@
 
                 <!-- Regular Members  -->
                 <div class="col-md-6 grid-margin stretch-card">
-                <div class="card card-tale">
-                    <div class="card-body">
+                <div class="card card-tale ">
+                    <div class="card-body bg-white">
                         <div class="d-flex justify-content-between">
                             <p class="fw-bold">Regular Members</p>
                             <p class="text-muted fst-italic">Last updated at 16:04</p>

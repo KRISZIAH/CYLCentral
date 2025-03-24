@@ -2,14 +2,12 @@
 @extends('layouts.main')
 
 @section('content')
-
 <section>
     <h3 class="sidebar-title">My Account</h3>
 
     <div class="container-fluid d-flex gap-4 primary-container">
         <!-- Sidebar -->
-        <div class="sidebar p-4 rounded-3 shadow-sm col-md-3">
-            <button onclick="window.location='{{ route('editprofile') }}';" class="btn btn-light w-100 mb-3 d-flex align-items-center">
+        <div class="sidebar p-4 rounded-3 shadow-sm bg-white col-md-3">  <button onclick="window.location='{{ route('editprofile') }}';" class="btn btn-light w-100 mb-3 d-flex align-items-center">
                 <i class="bi bi-pencil me-2"></i>Edit Profile
             </button>
 
@@ -21,7 +19,6 @@
                 <i class="bi bi-box-arrow-right me-2"></i> Log Out
             </button>
         </div>
-
 
 
     <!-- All Files -->
