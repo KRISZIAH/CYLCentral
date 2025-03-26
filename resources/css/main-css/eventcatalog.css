@@ -1,0 +1,229 @@
+#hero {
+    position: relative;
+    background: url('assets/img/membership.png') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+.search-bar {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -30px;
+    position: relative;
+    z-index: 2;
+}
+.search-bar input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+}
+.search-bar select, .search-bar button {
+    margin-left: 10px;
+}
+
+/* Banner */
+#programs{
+    background:var(--mint);
+}
+
+.info-section {
+    background: var(--white);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 ;
+}
+.info-section span {
+    font-weight: bold;
+}
+.view-all {
+    font-weight: bold;
+}
+
+.logo img {
+    width: 100px;
+    height: 60px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+
+/* Programs */
+.programs-section {
+    margin: 0 auto;
+    background: var(--mint);
+    padding: 20px  ;
+}
+
+.header h4{
+    text-align: center;
+    color: var(--brown);
+}
+
+.program-card {
+    background: var(--white);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.program-card h5{
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--brown);
+    text-align: left;
+}
+
+.program-card span {
+    font-size: 12px;
+    font-weight: semi-bold;
+    color: var(--black);
+    text-align: left;
+}
+
+
+/* Sidebar */
+.sidebar {
+    background: transparent !important; /* Makes background fully transparent */
+    box-shadow: none; /* Removes any shadow */
+    border: none; /* Optional: Removes borders if needed */
+}
+
+.sidebar .category {
+    background: rgba(255, 255, 255, 0.5); /* 30% opacity */
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: var(--green1);
+    text-align: center;
+    cursor: pointer;
+    font-size: 13px;
+}
+.sidebar .active {
+    background:var(--gradient-green);
+    color: white;
+}
+
+.sort-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid var(--green1); /* Green border */
+    padding: 10px;
+    font-size: 16px;
+    color: var(--green1);
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    text-align: left;
+}
+
+.sort-btn img {
+    height: 30px;
+}
+
+/* Hover effect */
+.sort-btn:hover {
+    background: var(--gradient-green);
+    color: white;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Active button */
+.sort-btn.active {
+    background: var(--gradient-green);
+    color: white;
+    font-weight: bold;
+}
+
+
+/* Org info section */
+.info-content {
+    padding: 15px;
+    text-align: center;
+    background: var(--white);
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+
+/* Event Catalog */
+.event-details {
+    font-size: 16px;
+    color: var(--green1); /* Dark green tone */
+}
+
+.event-details i {
+    font-size: 18px;
+    color: var(--green1); /* Match text color */
+}
+
+.see-details {
+    font-weight: bold;
+    color: var(--green1);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 15px 0;
+    display: block; /* Ensures it takes up full width */
+    text-align: left; /* Aligns text to the left */
+    margin-left: 0; /* Ensures no extra margin on the left */
+}
+
+.see-details .arrow {
+    font-size: 15px;
+    color: var(--green1);
+}
+
+.see-details:hover {
+    text-decoration: underline;
+}
+
+/* buttons */
+.event-details .btn-register {
+    background: var(--brown);
+    color: var(--white);
+    border: none;
+    border-radius: 20px; /* Fully rounded */
+    padding: 10px 30px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.event-details .btn-rate {
+    background: transparent;
+    border: 2px solid var(--brown); /* Soft pinkish brown border */
+    color: var(--brown);
+    border-radius: 20px;
+    padding: 10px 30px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid var(--brown);
+}
+
+.event-details .btn-rate:hover {
+    background: var(--brown);
+    color: white;
+}
+
+.event-details .btn-register:hover {
+    background: var(--green1);
+    color: var(--white);
+}
+

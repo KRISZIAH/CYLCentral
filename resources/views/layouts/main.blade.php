@@ -16,15 +16,16 @@
 
     <!-- Styles -->
     @vite('resources/css/app.css')
-    @vite('resources/css/home.css')
-    @vite('resources/css/membershippage.css')
-    @vite('resources/css/editprofile.css')
-    @vite('resources/css/eventcatalog.css')
-    @vite('resources/css/files.css')
-    @vite('resources/css/eventpages.css')
-    @vite('resources/css/dashboard_analytics.css')
-    @vite('resources/css/announcement_tab.css')
+    @vite('resources/css/main-css/home.css')
+    @vite('resources/css/main-css/membershippage.css')
+    @vite('resources/css/main-css/editprofile.css')
+    @vite('resources/css/main-css/eventcatalog.css')
+    @vite('resources/css/main-css/files.css')
+    @vite('resources/css/main-css/eventpages.css')
+    @vite('resources/css/main-css/announcement_tab.css')
 
+    <!-- Styles for admin -->
+    @vite('resources/css/admin/dashboard_analytics.css')
 
 
     <!-- Bootstrap and Icons -->
@@ -59,12 +60,12 @@
 
     <!-- Page-specific scripts -->
     @vite('resources/js/app.js')
-    @vite('resources/js/editprofile.js')
-    @vite('resources/js/eventcatalog.js')
+    @vite('resources/js/main-js/editprofile.js')
+    @vite('resources/js/main-js/eventcatalog.js')
     @vite('resources/js/charts/totalevents.js')
     @vite('resources/js/charts/partnergroups.js')
     @vite('resources/js/charts/regularmember.js')
-    @vite('resources/js/eventpages.js')
+    @vite('resources/js/main-js/eventpages.js')
     @vite('resources/js/announcement_tab.js')
 </body>
 </html>
