@@ -22,70 +22,70 @@
         </div>
 
         <!-- Profile Section -->
-        <div class="content p-4 rounded-3 shadow-sm bg-white col-md-9">
+        <!-- Profile Section -->
+    <div class="content p-4 rounded-3 shadow-sm bg-white col-md-9">
         <div class="profile-header text-center">
-                <div class="position-relative profile-pic-container">
-                    <img id="profile-pic" src="profile.jpg" alt="Profile Picture" class="profile-pic rounded-circle border">
-                    <label for="profile-upload" class="upload-icon position-absolute bottom-0 end-0  p-1 rounded-circle">
-                        📷
-                    </label>
-                    <input type="file" id="profile-upload" accept="image/*" class="d-none">
-                </div>
-                <h4 >Juan Dela Cruz</h4>
-                <p >Membership ID: CYLC-202411010</p>
+            <div class="position-relative profile-pic-container">
+                <img id="profile-pic" src="profile.jpg" alt="Profile Picture" class="profile-pic rounded-circle border">
+                <label for="profile-upload" class="upload-icon position-absolute bottom-0 end-0 p-1 rounded-circle">
+                    📷
+                </label>
+                <input type="file" id="profile-upload" accept="image/*" class="d-none">
             </div>
+            <h4>{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</h4>
+            <p>Membership ID: CYLC-{{ date('Y') }}{{ str_pad(Auth::user()->id, 6, '0', STR_PAD_LEFT) }}</p>
+        </div>
 
-            <form id="profileForm">
-                <div class="row">
-                    <div class="col-md-6 mb-3 labels">
-                        <label>First Name</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control rounded-3" id="firstName" value="Juan" disabled>
-                            <button type="button" class="btn btn-light edit-btn">✏️</button>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 mb-3 labels">
-                        <label>Last Name</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control rounded-3" id="lastName" value="Dela Cruz" disabled>
-                            <button type="button" class="btn btn-light edit-btn">✏️</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 mb-3 labels">
-                        <label>Email</label>
-                        <div class="input-group">
-                            <input type="email" class="form-control rounded-3" id="email" value="jdc@gmail.com" disabled>
-                            <button type="button" class="btn btn-light edit-btn">✏️</button>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 mb-3 labels">
-                        <label>Contact Number</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control rounded-3" id="contact" value="+63 223 9493" disabled>
-                            <button type="button" class="btn btn-light edit-btn">✏️</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-3 labels">
-                    <label>Password</label>
+        <form id="profileForm">
+            <div class="row">
+                <div class="col-md-6 mb-3 labels">
+                    <label>First Name</label>
                     <div class="input-group">
-                        <input type="password" class="form-control rounded-3" id="password" value="************" disabled>
+                        <input type="text" class="form-control rounded-3" id="firstName" value="{{ Auth::user()->first_name }}" disabled>
                         <button type="button" class="btn btn-light edit-btn">✏️</button>
                     </div>
                 </div>
 
-                <div class="text-end">
-                    <button id="cancelBtn" type="button" class="btn btn-outline-danger d-none">CANCEL</button>
-                    <button id="saveBtn" type="submit" class="btn btn-danger">SAVE CHANGES</button>
+                <div class="col-md-6 mb-3 labels">
+                    <label>Last Name</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control rounded-3" id="lastName" value="{{ Auth::user()->last_name }}" disabled>
+                        <button type="button" class="btn btn-light edit-btn">✏️</button>
+                    </div>
                 </div>
-            </form>
-        </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3 labels">
+                    <label>Email</label>
+                    <div class="input-group">
+                        <input type="email" class="form-control rounded-3" id="email" value="{{ Auth::user()->email }}" disabled>
+                        <button type="button" class="btn btn-light edit-btn">✏️</button>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3 labels">
+                    <label>Contact Number</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control rounded-3" id="contact" value="{{ Auth::user()->phone }}" disabled>
+                        <button type="button" class="btn btn-light edit-btn">✏️</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3 labels">
+                <label>Password</label>
+                <div class="input-group">
+                    <input type="password" class="form-control rounded-3" id="password" value="************" disabled>
+                    <button type="button" class="btn btn-light edit-btn">✏️</button>
+                </div>
+            </div>
+
+            <div class="text-end">
+                <button id="cancelBtn" type="button" class="btn btn-outline-danger d-none">CANCEL</button>
+                <button id="saveBtn" type="submit" class="btn btn-danger">SAVE CHANGES</button>
+            </div>
+        </form>
     </div>
 </section>
 @endsection

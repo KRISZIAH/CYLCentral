@@ -4,7 +4,7 @@
 @section('content')
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section" style="background-image: url({{ asset('img/membership_page/membership.png') }});">
+    <section id="hero" class="herosection" style="background-image: url({{ asset('img/membership_page/membership.png') }}); background-size: cover;">
     <div class="membership-section">
           <div class="membership-content">
               Membership
@@ -19,7 +19,7 @@
               <div class="col-md-12">
                   <div class="card service-card">
                       <div class="row g-0">
-                          <div class="stat-item">
+                          <div class="stat-item1">
                               <div class="logo">
                                   <img src="{{ asset('img/membership_page/CYLC logo.png') }}" alt="CYLC Logo">
                                   <div>

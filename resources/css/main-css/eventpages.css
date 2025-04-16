@@ -1,4 +1,7 @@
-
+.pages_section{
+    padding: 50px;
+    background-color:var(--mint);
+}
 
 .card-header{
     background-color: var(--green2);

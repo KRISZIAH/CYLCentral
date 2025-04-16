@@ -1,22 +1,6 @@
 
-/* Smooth scroll */
-:root {
-    scroll-behavior: smooth;
-  }
-  
 
-  
-  
-  /*--------------------------------------------------------------
-  # Disable aos animation delay on mobile devices
-  --------------------------------------------------------------*/
-  @media screen and (max-width: 768px) {
-    [data-aos-delay] {
-      transition-delay: 0 !important;
-    }
-  }
-  
-  
+
   /*--------------------------------------------------------------
   # Global Page Titles & Breadcrumbs
   --------------------------------------------------------------*/
@@ -105,9 +89,14 @@
   /*--------------------------------------------------------------
   # Hero Section
   --------------------------------------------------------------*/
-  .hero {
+  .herosection {
     position: relative;
     padding: 20px 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
    
   }
 
@@ -150,9 +139,10 @@
   }
   
   
-  .container .stat-item {
+  .container .stat-item1 {
     max-width: 8800px;
     margin: auto;
+    padding-top: 20px;
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -161,12 +151,13 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
+    margin-bottom: 20px;
   }
   
-  .stat-item .logo img {
-    width: 200px;
-    height: 100px;
+  .stat-item  img {
+    width: 300px;
+    height: 200px;
     align-items: center;
     justify-content: center;
   }

@@ -6,6 +6,13 @@
 
 
 @section('content')
+
+@if(session('success'))
+    <div class="alert alert-success" id="successMessage">
+        {{ session('success') }}
+    </div>
+@endif
+
 <!-- Hero Section -->
 <section class="hero-section" style="background-image: url('{{ asset('img/home/hero.png') }}');">
     <div class="container text-center text-white">

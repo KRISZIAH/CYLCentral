@@ -14,20 +14,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+    <!-- Bootstrap CSS (Include in <head>) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
 
 
     <!-- Styles -->
     @vite('resources/css/app.css')
-    @vite('resources/css/main-css/home.css')
-    @vite('resources/css/main-css/membershippage.css')
-    @vite('resources/css/main-css/editprofile.css')
-    @vite('resources/css/main-css/eventcatalog.css')
-    @vite('resources/css/main-css/files.css')
-    @vite('resources/css/main-css/eventpages.css')
-    @vite('resources/css/partials-css/navbar.css')
-    @vite('resources/css/partials-css/footer.css')
-
-    @vite('resources/css/partials-css/navbar1.css')
 
     <!-- Styles for login/registration -->
     @vite('resources/css/auth-css/register.css')
@@ -44,24 +38,16 @@
 
 
 <body>
-    <!-- Navbar -->
-    <header>
-        @include('partials.navbar')
-    </header>
-
-
+    <!-- No Navbar -->
+   
     <!-- Main Content -->
     <main>
         @yield('content')
+
     </main>
 
-
-    <!-- Footer -->
-    <footer>
-        @include('partials.footer')
-    </footer>
-
-
+    <!-- No Footer -->
+    
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -77,6 +63,10 @@
     @vite('resources/js/main-js/eventpages.js')
     @vite('resources/js/partials-js/navbar.js')
     @vite('resources/js/partials-js/footer.js')
+
+    <!-- Bootstrap JS (Include before closing </body>) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 </html>

@@ -1,4 +1,7 @@
-
+.files_section{
+    padding: 50px;
+    background-color:var(--mint);
+}
 
 
 .sidebar-title{

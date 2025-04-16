@@ -8,7 +8,7 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
-                'resources/css/home.css',
+                'resources/css/main-css/home.css',
                 'resources/css/membershippage.css',
                 'resources/css/editprofile.css', 
                 'resources/js/editprofile.js',
@@ -23,6 +23,11 @@ export default defineConfig({
                 'resources/js/eventpages.js',
                 'resources/css/announcement_tab.css',
                 'resources/js/announcement_tab.js',
+                'resources/css/auth-css/register.css',
+                'resources/css/auth-css/login.css',
+                'resources/css/partials-css/navbar.css',
+                'resources/js/partials-js/navbar.js',
+                'resources/css/admin-css/admin_sidebar.css'
             ],
             refresh: true,
         }),

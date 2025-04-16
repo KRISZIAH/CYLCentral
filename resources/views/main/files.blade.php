@@ -2,7 +2,7 @@
 @extends('layouts.main')
 
 @section('content')
-<section>
+<section class="files_section">
     <h3 class="sidebar-title">My Account</h3>
 
     <div class="container-fluid d-flex gap-4 primary-container">

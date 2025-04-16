@@ -1,15 +1,13 @@
 
 
-/* General Styles */
-main {
-    padding: 60px;
-    background-color:var(--mint);
+.edit-profile {
+    background: var(--mint);
+    padding: 50px ;
+
 }
 
-.edit-profile {
-    height: 100vh;
-    background: var(--mint);
-}
+
+
 
 /* Profile Container */
 .profile-container {

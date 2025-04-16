@@ -1,10 +1,13 @@
 
-
 /* breadCrumb */
+.top{
+    background: var(--mint);
+}
+
 .breadcrumb-item a {
     font-weight: bold;
     color: var(--brown); 
-    font-size: 30px;
+    font-size: 25px;
 }
 .breadcrumb-item a:hover {
     text-decoration: underline;
@@ -14,6 +17,8 @@
     font-size: 20px;
     font-weight: semi-bold;
 }
+
+/* User Profile */
 .profile-img {
     width: 35px;
     height: 35px;
@@ -39,10 +44,19 @@
     color: gray;
 }
 
-/* Main Panel */
-.header{
-    padding: 20px;
+/* Divider */
+.top-divider {
+    border-top: 1px solid var(--green1); 
+    width: 95%;
+    background-color: transparent;
+    margin: 0 auto;
 }
+
+/* Main Panel */
+
+p.head {
+    font-size: 25px !important;
+  }
 
 .header h3{
     color: var(--green1);
@@ -50,7 +64,7 @@
 
 .header h6{
     color: var(--green1);
-    
+    font-size: 15px
 }
 
 /* Cards */
@@ -60,40 +74,62 @@
     color: var(--brown);
     transition: background 0.25s ease;
     margin-bottom: 20px;
-    
+    border-radius: 20px!important;
 }
 
 .card .card-body {
-    padding: 20px 30px;
+    padding: 10px 20px;
     border: none !important;
 }
 
 .card.card-tale {
     background: #FFFFFF;
-    color: #C56659;
+    color:var(--brown);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-    border: none !important;
-    border-radius: 10px !important; 
+    border: none ;
+    border-radius: 20px!important;
+
 }
 
 .card.card-tale .head {
     font-weight: 1000;
-    background: linear-gradient(90deg, #006d47, #00a86b);
+    background: var(--gradient-green);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .card-body img{
     border: none !important;
+    width: 70px;
+    height: 30px;
 }
+
+.card-body .time{
+    font-size: 13px;
+    color: var(--brown);
+    padding-top: 10px;
+}
+
+.card-body .title{
+    font-size: 13px;
+    color: var(--brown);
+    padding-top: 10px;
+}
+
+.card-body .place{
+    font-size: 13px;
+    color: var(--brown);
+}
+
+
+/* button */
 .btn-export-pdf {
-    background: linear-gradient(45deg, #b05d4c, #c56659);
+    background: var(--gradient-brown);
     color: white;
     border: none;
-    border-radius: 10px;
-    padding: 12px 24px;
-    font-weight: bold;
-    font-size: 16px;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 13px;
     display: flex;
     align-items: center;
     gap: 8px;

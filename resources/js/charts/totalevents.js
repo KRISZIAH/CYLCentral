@@ -22,7 +22,7 @@ google.charts.load("current", {packages:["corechart"]});
 
       var options = {
         //title: "Density of Precious Metals, in g/cm^3",
-        width: 490,
+        width: 420,
         height: 300,
         bar: {groupWidth: "95%"},
         legend: { position: "none" },
