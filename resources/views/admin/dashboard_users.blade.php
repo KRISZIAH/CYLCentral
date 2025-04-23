@@ -18,7 +18,6 @@
     <!-- User Profile Section -->
     <div class="d-flex align-items-center AdminProfile">
       <div class="nav-icons">
-        <i class="bi bi-chat-dots"></i>
         <i class="bi bi-bell"></i>
       </div>
       <div class="user-info">
@@ -26,6 +25,7 @@
         <div class="ms-2">
           <div class="user-name">Jennifer Moltio</div>
           <div class="user-role">Admin</div>
+          
         </div>
       </div>
     </div>

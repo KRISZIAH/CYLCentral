@@ -13,10 +13,10 @@ class PageController extends Controller
     }
 
 
-    // public function about()
-    // {
-    //     return view('about');
-    // }
+    public function aboutpage()
+    {
+        return view('main.aboutpage');
+    }
 
 
     public function eventcatalog()
@@ -42,7 +42,6 @@ class PageController extends Controller
         return view('main.files');
     }
 
-
     public function editProfile()
     {
         return view('main.editprofile');
@@ -54,10 +53,10 @@ class PageController extends Controller
     }
 
     //For Admins
-    public function dashboard_analytics()
-    {
-        return view('admin.dashboard_analytics');
-    }
+    // public function dashboard_analytics()
+    // {
+    //     return view('admin.dashboard_analytics');
+    // }
 
     // public function dashboard_users()
     // {

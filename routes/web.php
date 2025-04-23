@@ -5,15 +5,17 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 
 // Public Routes
 Route::get('/home', [PageController::class, 'home'])->name('home');
+Route::get('/about', [PageController::class, 'aboutpage'])->name('about');
 Route::get('/events', [PageController::class, 'eventcatalog'])->name('events');
 Route::get('/membership', [PageController::class, 'membershippage'])->name('membership'); 
 Route::get('/pages', [PageController::class, 'eventpages'])->name('pages'); 
 
 //Temporary routes (For Admin Side)
-Route::get('/kpi', [PageController::class, 'dashboard_analytics'])->name('kpi');
+// Route::get('/kpi', [PageController::class, 'dashboard_analytics'])->name('kpi');
 Route::get('/users', [PageController::class, 'dashboard_users'])->name('users');
 
 
@@ -31,6 +33,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/files', [PageController::class, 'files'])->name('files');
     Route::get('/editprofile', [PageController::class, 'editProfile'])->name('editprofile');
 });
+
+// Authentication Routes for Admins
+Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard_analytics');
+
+
 
 // for redirections
 Route::get('/cms', function () {
