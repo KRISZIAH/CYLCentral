@@ -8,9 +8,11 @@
 @section('content')
 
 @if(session('success'))
-    <div class="alert alert-success" id="successMessage">
-        {{ session('success') }}
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            showCustomToast(@json(session('success')));
+        });
+    </script>
 @endif
 
 <!-- Hero Section -->

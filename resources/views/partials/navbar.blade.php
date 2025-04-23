@@ -39,50 +39,45 @@
             </ul>
 
             <!-- Right Side - Auth Links -->
-            <!-- Right Side - Auth Links -->
-<ul class="navbar-nav ms-auto">
-    @guest
-        @if (Route::has('login'))
-            <li class="nav-item">
-                <a class="nav-link login-btn" href="{{ route('login') }}">LOG IN</a>
-            </li>
-        @endif
+            <ul class="navbar-nav ms-auto">
+                @guest
+                    @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link login-btn" href="{{ route('login') }}">LOG IN</a>
+                        </li>
+                    @endif
 
-        @if (Route::has('register'))
-            <li class="nav-item">
-                <a class="btn signup-btn ms-2" href="{{ route('register') }}">SIGN UP</a>
-            </li>
-        @endif
-    @else
-        <!-- User Dropdown -->
-        <li class="nav-item dropdown">
-            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                <i class="fas fa-user-circle me-1"></i> {{ Auth::user()->first_name }}
-            </a>
+                    @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="btn signup-btn ms-2" href="{{ route('register') }}">SIGN UP</a>
+                        </li>
+                    @endif
+                @else
+    @include('partials.navbar-user')
 
-            <div class="dropdown-menu dropdown-menu-end">
-                <a class="dropdown-item" href="{{ route('editprofile') }}">
-                    <i class="fas fa-user-edit me-2"></i> Edit Profile
-                </a>
-                <a class="dropdown-item" href="{{ route('files') }}">
-                    <i class="fas fa-folder me-2"></i> Files
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{ route('logout') }}"
-                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <i class="fas fa-sign-out-alt me-2"></i> Logout
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
-            </div>
-        </li>
-    @endguest
-</ul>
-        </div> <!-- End of Navbar Content -->
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a class="dropdown-item" href="{{ route('editprofile') }}">
+                                <i class="fas fa-user-edit me-2"></i> Edit Profile
+                            </a>
+                            <a class="dropdown-item" href="{{ route('files') }}">
+                                <i class="fas fa-folder me-2"></i> Files
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="fas fa-sign-out-alt me-2"></i> Logout
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                @endguest
+            </ul>
     </div>
 </nav>
 
 <!-- Ensure Bootstrap and Navbar Scripts -->
 <script src="{{ asset('resources/js/partials-js/navbar.js') }}"></script>
+<script src="{{ asset('resources/js/partials-js/pjax-navbar.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

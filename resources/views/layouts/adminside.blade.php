@@ -14,7 +14,7 @@
     <!-- Styles -->
     @vite('resources/css/app.css')
     @vite('resources/css/admin-css/dashboard_analytics.css')
-    @vite('resources/css/admin-css/admin_sidebar.css')
+    @vite('resources/css/partials-css/admin_sidebar.css')
     @vite('resources/css/admin-css/dashboard_users.css')
 
 
@@ -166,7 +166,7 @@
     @vite('resources/js/charts/partnergroups.js')
     @vite('resources/js/charts/regularmember.js')
     @vite('resources/js/main-js/eventpages.js')
-    @vite('resources/js/admin-js/dashboard_users.js')
+    @vite('resources/js/admin-js/dashboard_user.js')
 
 </body>
 </html>
