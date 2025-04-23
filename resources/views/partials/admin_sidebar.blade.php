@@ -14,7 +14,7 @@
 
         <!-- Overview -->
         <li class="nav-item">
-            <a href="{{ route('admin.dashboard_analytics') }}" class="nav-link d-flex align-items-center px-3 py-2 {{ request()->routeIs('admin.dashboard_analytics') ? 'active' : '' }}">
+            <a href="{{ route('dashboard') }}" class="nav-link d-flex align-items-center px-3 py-2 {{ request()->routeIs('dashboard') ? 'active' : '' }}">
                 <i class="bi bi-speedometer2 me-2"></i> Overview
             </a>
         </li>

@@ -16,40 +16,45 @@ class LoginController extends Controller
     
     public function login(Request $request)
     {
-        // Validate the request
         $request->validate([
             'email' => 'required|string',
             'password' => 'required|string',
         ]);
+    
+        // Attempt ADMIN login
+        if (Auth::guard('admin')->attempt($request->only('email', 'password'))) {
+            return redirect()->route('dashboard')->with('success', 'Welcome Admin!');
+        }
+    
+        // Attempt USER login (default guard)
+        if (Auth::attempt($request->only('email', 'password'))) {
+            return redirect()->route('home')->with('success', 'Login successful!');
+        }
+    
+        // If both fail
+        return back()->withErrors(['login_error' => 'Invalid credentials.']);
+    }
 
-        // Check if the user is an admin (by checking the admins table)
-        $admin = Admin::where('email', $request->email)->first();
+    protected function attemptAdminLogin(Request $request)
+        {
+            $admin = Admin::where('email', $request->email)->first();
+            
+            if ($admin && Hash::check($request->password, $admin->password)) {
+                Auth::guard('admin')->login($admin);
+                return true;
+            }
+
+            return false;
+        }
+
+        public function logout(Request $request)
+        {
+            Auth::guard('web')->logout(); // Log out users
+            Auth::guard('admin')->logout(); // Log out admins
         
-        if ($admin && \Hash::check($request->password, $admin->password)) {
-            // Admin login success
-            Auth::login($admin); // Log in as admin
-            return redirect()->route('admin.dashboard_analytics')->with('success', 'Welcome Admin!');
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+        
+            return redirect('home')->with('success', 'Logged out successfully.');
         }
-
-        // If not admin, check in the users table (regular members)
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::guard('web')->attempt($credentials)) {
-            // Regular user login success
-            return redirect()->route('home')->with('success', 'Login successful! Welcome back.');
-        }
-
-        // If login fails for both admin and user
-        return back()->withErrors(['login_error' => 'The username or password you entered don\'t match.']);
     }
-
-    public function logout(Request $request)
-    {
-        Auth::logout();
-
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return redirect('home')->with('success', 'Logged out successfully.');
-    }
-}

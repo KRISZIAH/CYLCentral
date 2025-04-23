@@ -27,7 +27,7 @@ class PageController extends Controller
 
     public function membershippage()
     {
-     return view('main.membershippage'); // Ensure the correct path
+     return view('main.membershippage'); 
     }
 
 
@@ -53,10 +53,10 @@ class PageController extends Controller
     }
 
     //For Admins
-    // public function dashboard_analytics()
-    // {
-    //     return view('admin.dashboard_analytics');
-    // }
+    public function dashboard()
+    {
+        return view('admin.dashboard_analytics');
+    }
 
     // public function dashboard_users()
     // {

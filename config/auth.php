@@ -41,7 +41,7 @@ return [
             'provider' => 'users',
         ],
 
-        'admin' => [ // 👈 custom guard for admins
+        'admin' => [ 
             'driver' => 'session',
             'provider' => 'admins',
         ],
@@ -75,7 +75,7 @@ return [
         //     'table' => 'users',
         // ],
 
-        'admins' => [ // 👈 custom provider for admins
+        'admins' => [ 
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
         ],

@@ -5,7 +5,6 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\AdminController;
 
 // Public Routes
 Route::get('/home', [PageController::class, 'home'])->name('home');
@@ -16,7 +15,6 @@ Route::get('/pages', [PageController::class, 'eventpages'])->name('pages');
 
 //Temporary routes (For Admin Side)
 // Route::get('/kpi', [PageController::class, 'dashboard_analytics'])->name('kpi');
-Route::get('/users', [PageController::class, 'dashboard_users'])->name('users');
 
 
 // Authentication Routes (Only for guests)
@@ -35,11 +33,13 @@ Route::middleware('auth')->group(function () {
 });
 
 // Authentication Routes for Admins
-Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard_analytics');
+Route::middleware(['auth:admin'])->group(function () {
+    Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
+    Route::get('/users', [PageController::class, 'dashboard_users'])->name('users');
 
+});
 
-
-// for redirections
+// for redirections in admin sidebar
 Route::get('/cms', function () {
     return redirect('/home');  // Redirects to the homepage or any existing route
 })->name('cms');
