@@ -43,7 +43,7 @@
             z-index: 50;
             transition: transform 0.3s ease;
             background-color: white;
-            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            box-shadow: none !important;
         }
         
         /* Main Content Area */

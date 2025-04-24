@@ -3,64 +3,58 @@
 <!-- Bootstrap Icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 
-<div class="sidebar bg-white p-3 shadow-sm" style="width: 260px; min-height: 100vh;">
-    <div class="text-center mb-4">
-        <img src="{{ asset('img/logos/cylcentral-logo2.png') }}" alt="CYLCentral Logo" class="img-fluid" style="max-width: 220px;">
+<div class="sidebar bg-white p-3 d-flex flex-column align-items-center" style="width: 240px; height: 100vh; min-height: 100vh;  overflow: hidden;">
+    <div class="w-100 d-flex justify-content-center align-items-center mb-2" style="padding-top: 10px;">
+        <img src="{{ asset('img/logos/cylcentral-logo2.png') }}" alt="CYLCentral Logo" class="img-fluid" style="width: 181px; height: 40px; display: block; margin: 0 auto; object-fit: contain;">
     </div>
-
     <ul class="nav flex-column">
         <!-- Section Title -->
-        <li class="nav-item mb-2 mt-3 text-muted fw-semibold small px-2">Dashboard</li>
-
+<div class="sidebar bg-white p-3 d-flex flex-column align-items-center" style="width: 240px; height: 100vh; min-height: 100vh;  overflow: hidden;">
+    <ul class="nav flex-column w-100" style="padding: 6px 12px 0 0;">
+        <!-- Section Title -->
+        <li class="nav-item mb-2 mt-3" style="color: var(--green1); font-weight: 500; font-size: 16px;">Dashboard</li>
         <!-- Overview -->
         <li class="nav-item">
-            <a href="{{ route('dashboard') }}" class="nav-link d-flex align-items-center px-3 py-2 {{ request()->routeIs('dashboard') ? 'active' : '' }}">
-                <i class="bi bi-speedometer2 me-2"></i> Overview
+            <a href="{{ route('dashboard') }}" class="nav-link d-flex align-items-center px-2 py-1 {{ request()->routeIs('dashboard') ? 'active' : '' }}" style="height:33px; width:210px; border-radius:8px; font-size:16px; font-weight:400; background: {{ request()->routeIs('dashboard') ? 'var(--gradient-green)' : 'rgba(228,241,234,0.5)' }}; padding: 0 16px; margin-bottom: 6px;">
+                <i class="bi bi-bar-chart me-2" style="font-size:18px;"></i> Overview
             </a>
         </li>
-
         <!-- Section Title -->
-        <li class="nav-item mb-2 mt-4 text-muted fw-semibold small px-2">Tools</li>
+        <li class="nav-item mb-2 mt-4" style="color: var(--green1); font-weight: 500; font-size: 16px;">Tools</li>
 
-        <!-- CMS -->
         <li class="nav-item">
-            <a href="{{ route('cms') }}" class="nav-link d-flex align-items-center px-3 py-2 {{ request()->routeIs('cms') ? 'active' : '' }}">
-                <i class="bi bi-layout-text-window-reverse me-2"></i> CMS
+            <a href="{{ route('cms') }}" class="nav-link d-flex align-items-center px-2 py-1 {{ request()->routeIs('cms') ? 'active' : '' }}" style="height:33px; width:210px; border-radius:8px; font-size:16px; font-weight:400; background: {{ request()->routeIs('cms') ? 'var(--gradient-green)' : 'rgba(228,241,234,0.5)' }}; padding: 0 16px; margin-bottom: 6px;">
+                <i class="bi bi-layout-text-window-reverse me-2" style="font-size:18px;"></i> CMS
             </a>
         </li>
-
         <!-- Users -->
         <li class="nav-item">
-            <a href="{{ route('users') }}" class="nav-link d-flex align-items-center px-3 py-2 {{ request()->routeIs('users') ? 'active' : '' }}">
-                <i class="bi bi-people me-2"></i> Users
+            <a href="{{ route('users') }}" class="nav-link d-flex align-items-center px-2 py-1 {{ request()->routeIs('users') ? 'active' : '' }}" style="height:33px; width:210px; border-radius:8px; font-size:16px; font-weight:400; background: {{ request()->routeIs('users') ? 'var(--gradient-green)' : 'rgba(228,241,234,0.5)' }}; padding: 0 16px; margin-bottom: 6px;">
+                <i class="bi bi-people me-2" style="font-size:18px;"></i> Users
             </a>
         </li>
-
         <!-- Registrations -->
         <li class="nav-item">
-            <a href="{{ route('registrations') }}" class="nav-link d-flex align-items-center px-3 py-2 {{ request()->routeIs('registrations') ? 'active' : '' }}">
-                <i class="bi bi-person-plus me-2"></i> Registrations
+            <a href="{{ route('registrations') }}" class="nav-link d-flex align-items-center px-2 py-1 {{ request()->routeIs('registrations') ? 'active' : '' }}" style="height:33px; width:210px; border-radius:8px; font-size:16px; font-weight:400; background: {{ request()->routeIs('registrations') ? 'var(--gradient-green)' : 'rgba(228,241,234,0.5)' }}; padding: 0 16px; margin-bottom: 6px;">
+                <i class="bi bi-person-plus me-2" style="font-size:18px;"></i> Registrations
             </a>
         </li>
-
         <!-- Payments -->
         <li class="nav-item">
-            <a href="{{ route('payments') }}" class="nav-link d-flex align-items-center px-3 py-2 {{ request()->routeIs('payments') ? 'active' : '' }}">
-                <i class="bi bi-credit-card me-2"></i> Payments
+            <a href="{{ route('payments') }}" class="nav-link d-flex align-items-center px-2 py-1 {{ request()->routeIs('payments') ? 'active' : '' }}" style="height:33px; width:210px; border-radius:8px; font-size:16px; font-weight:400; background: {{ request()->routeIs('payments') ? 'var(--gradient-green)' : 'rgba(228,241,234,0.5)' }}; padding: 0 16px; margin-bottom: 6px;">
+                <i class="bi bi-credit-card me-2" style="font-size:18px;"></i> Payments
             </a>
         </li>
-
         <!-- Attendance -->
         <li class="nav-item">
-            <a href="{{ route('attendance') }}" class="nav-link d-flex align-items-center px-3 py-2 {{ request()->routeIs('attendance') ? 'active' : '' }}">
-                <i class="bi bi-calendar-check me-2"></i> Attendance
+            <a href="{{ route('attendance') }}" class="nav-link d-flex align-items-center px-2 py-1 {{ request()->routeIs('attendance') ? 'active' : '' }}" style="height:33px; width:210px; border-radius:8px; font-size:16px; font-weight:400; background: {{ request()->routeIs('attendance') ? 'var(--gradient-green)' : 'rgba(228,241,234,0.5)' }}; padding: 0 16px; margin-bottom: 6px;">
+                <i class="bi bi-calendar-check me-2" style="font-size:18px;"></i> Attendance
             </a>
         </li>
-
         <!-- Announcements -->
         <li class="nav-item">
-            <a href="{{ route('announcements') }}" class="nav-link d-flex align-items-center px-3 py-2 {{ request()->routeIs('announcements') ? 'active' : '' }}">
-                <i class="bi bi-megaphone me-2"></i> Announcements
+            <a href="{{ route('announcements') }}" class="nav-link d-flex align-items-center px-2 py-1 {{ request()->routeIs('announcements') ? 'active' : '' }}" style="height:33px; width:210px; border-radius:8px; font-size:16px; font-weight:400; background: {{ request()->routeIs('announcements') ? 'var(--gradient-green)' : 'rgba(228,241,234,0.5)' }}; padding: 0 16px; margin-bottom: 6px;">
+                <i class="bi bi-megaphone me-2" style="font-size:18px;"></i> Announcements
             </a>
         </li>
     </ul>
@@ -69,11 +63,15 @@
 <style>
     .sidebar {
         background-color: var(--white) !important;
-        border-right: 2px solid #ccc;
+        overflow: hidden !important;
+        height: 100vh !important;
+        min-height: 100vh !important;
+        max-height: 100vh !important;
+        box-shadow: none !important;
     }
 
     .nav-item {
-        margin-bottom: 10px;
+        margin-bottom: 3px;
     }
 
     .nav-link {
@@ -89,7 +87,6 @@
         color: white !important;
         font-weight: 500;
         transform: scale(1.02);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .nav-link:hover:not(.active) {
