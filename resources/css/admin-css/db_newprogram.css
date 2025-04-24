@@ -1,0 +1,89 @@
+body, .container-fluid {
+    background: var(--mint) !important;
+}
+.card {
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    background: #fff;
+    border: none;
+}
+.btn-brown {
+    background: var(--gradient-brown);
+    color: #fff;
+    border: none;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 8px 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s;
+}
+.btn-brown:hover {
+    background: var(--brown);
+}
+.btn-outline-green {
+    border: 2px solid var(--green1);
+    color: var(--green1);
+    background: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 8px;
+    padding: 8px 24px;
+    transition: background 0.2s, color 0.2s;
+}
+.btn-outline-green:hover {
+    background: var(--green1);
+    color: #fff;
+}
+.border-dashed {
+    border: 2px dashed var(--green1) !important;
+    border-radius: 12px;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: #f8faf9;
+}
+.color-swatch {
+    border: 2px solid #e5e5e5;
+    cursor: pointer;
+    display: inline-block;
+}
+.color-swatch.active, .color-swatch:focus {
+    border: 2px solid var(--green1) !important;
+}
+.form-label {
+    color: var(--green1);
+    font-weight: 600;
+}
+input.form-control, textarea.form-control, select.form-select {
+    border-radius: 8px;
+    border: 1px solid #dbe6e4;
+    background: #f8faf9;
+    box-shadow: none;
+    font-size: 16px;
+}
+input.form-control:focus, textarea.form-control:focus, select.form-select:focus {
+    border-color: var(--green1);
+    background: #fff;
+    box-shadow: 0 0 0 2px rgba(107,143,113,0.1);
+}
+input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #b6cfc9;
+}
+input[type="text"]:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: #b6cfc9;
+}
+input[type="text"]::placeholder, textarea::placeholder {
+    color: #b6cfc9;
+}
+.appearance-panel {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 24px;
+}
+.fw-semibold {
+    font-weight: 600;
+}

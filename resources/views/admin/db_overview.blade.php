@@ -9,7 +9,7 @@
   <!-- partial/Welcome -->
   <div class="main-panel">
     <div class="content-wrapper p-4">
-      <div class="row">
+      <div class="row g-4">
         <div class="col-md-12 grid-margin">
           <div class="row align-items-center">
             <!-- Welcome Section -->
@@ -34,10 +34,10 @@
         <!-- KPI Section -->
          
         <!-- Flagship Programs -->
-        <div class="row ">
+        <div class="row g-4">
           <div class="col-md-12 grid-margin stretch-card">
             <div class="card card-tale">
-              <div class="card-body d-flex bg-white align-items-center justify-content-between flex-column flex-md-row">
+              <div class="card-body bg-white text-center">
                 <div class="text-center text-md-start mb-3 mb-md-0">
                   <p class="title">Flagship Programs</p>
                   <p class="mb-2 head">9</p>
@@ -59,10 +59,10 @@
         </div>
 
         <!-- Total Events -->
-        <div class="row">
+        <div class="row g-4">
           <div class="col-md-6 grid-margin stretch-card">
             <div class="card card-tale">
-              <div class="card-body bg-white">
+              <div class="card-body bg-white text-center">
                 <div class="d-flex justify-content-between">
                   <p class="title">Total Events</p>
                   <p class="text-muted fst-italic time">Last updated at 16:04</p>
@@ -79,10 +79,10 @@
           <!-- 4 boxes -->
           <div class="col-md-6 grid-margin transparent">
             <!-- Total Funds -->
-            <div class="row">
+            <div class="row g-4">
               <div class="col-md-6 mb-4 stretch-card transparent">
                 <div class="card card-tale">
-                  <div class="card-body bg-white">
+                  <div class="card-body bg-white text-center">
                     <p class="mb-4 text-muted fst-italic time">Last updated at 16:04</p>
                     <p class="title">Total Funds</p>
                     <p class="fs-30 mb-2 head">
@@ -95,7 +95,7 @@
               <!-- Average Rating -->
               <div class="col-md-6 mb-4 stretch-card transparent">
                 <div class="card card-tale">
-                  <div class="card-body bg-white">
+                  <div class="card-body bg-white text-center">
                     <p class="mb-4 text-muted fst-italic time">Last updated at 16:04</p>
                     <p class="title">Average Rating</p>
                     <p class="fs-30 mb-2 head">
@@ -112,10 +112,10 @@
             </div>
 
             <!-- Physical Reach -->
-            <div class="row">
+            <div class="row g-4">
               <div class="col-md-6 mb-4 stretch-card transparent">
                 <div class="card card-tale">
-                  <div class="card-body bg-white">
+                  <div class="card-body bg-white text-center">
                     <p class="mb-4 text-muted fst-italic time">Last updated at 16:04</p>
                     <p class="title">Physical Reach</p>
                     <div class="d-flex align-items-center">
@@ -134,7 +134,7 @@
               <!-- Digital Reach -->
               <div class="col-md-6 mb-4 stretch-card transparent">
                 <div class="card card-tale">
-                  <div class="card-body bg-white">
+                  <div class="card-body bg-white text-center">
                     <p class="mb-4 text-muted fst-italic time">Last updated at 16:04</p>
                     <p class="title">Digital Reach</p>
                     <p class="fs-30 mb-2 head">
@@ -147,11 +147,11 @@
           </div>
         </div>
 
-        <div class="row">
+        <div class="row g-4">
           <!-- Partner Groups -->
           <div class="col-md-6 grid-margin stretch-card">
             <div class="card card-tale">
-              <div class="card-body bg-white">
+              <div class="card-body bg-white text-center">
                 <div class="d-flex justify-content-between">
                   <p class="title">Partner Groups</p>
                   <p class="text-muted fst-italic time">Last updated at 16:04</p>
@@ -168,7 +168,7 @@
           <!-- Regular Members -->
           <div class="col-md-6 grid-margin stretch-card">
             <div class="card card-tale">
-              <div class="card-body bg-white">
+              <div class="card-body bg-white text-center">
                 <div class="d-flex justify-content-between">
                   <p class="title">Regular Members</p>
                   <p class="text-muted fst-italic time">Last updated at 16:04</p>

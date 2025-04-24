@@ -49,6 +49,9 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/programs', function () {
         return view('admin.db_programs');
     })->name('programs');
+    Route::get('/db_newprogram', function () {
+        return view('admin.db_newprogram');
+    })->name('db_newprogram');
     Route::get('/events', [PageController::class, 'eventcatalog'])->name('events');
 });
 

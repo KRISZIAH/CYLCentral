@@ -23,7 +23,7 @@
     @vite('resources/css/main-css/files.css')
     @vite('resources/css/main-css/eventpages.css')
     @vite('resources/css/partials-css/navbar.css')
-    @vite('resources/css/partials-css/navbar-main.css')
+    @vite('resources/css/partials-css/navbar.css')
     @vite('resources/css/partials-css/footer.css')
 
     <!-- Styles for login/registration -->
@@ -68,7 +68,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- React SPA entry -->
-    @vite('resources/js/react/main.jsx')
+
 
     <!-- Bootstrap JS (Include before closing </body>) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

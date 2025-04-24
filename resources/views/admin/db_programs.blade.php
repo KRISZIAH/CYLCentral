@@ -7,7 +7,7 @@
         <div class="col-lg-11">
             <div class="d-flex align-items-center mb-3">
                 <span style="font-size:20px; font-weight:600; color: var(--green1);">Create Program</span>
-                <button class="ms-auto px-4 py-2" style="background: var(--gradient-brown); color: white; border-radius: 8px; font-size: 16px; font-weight: 500; border: none;">Add New</button>
+                <a href="{{ route('db_newprogram') }}" class="ms-auto px-4 py-2" style="background: var(--gradient-brown); color: white; border-radius: 8px; font-size: 16px; font-weight: 500; border: none; text-decoration: none; display: inline-block;">Add New</a>
             </div>
             <div class="rounded shadow-sm p-0" style="background: white;">
                 <div class="d-flex align-items-center justify-content-between px-4" style="background: var(--gradient-green); border-radius: 12px 12px 0 0; height:53px;">
@@ -20,15 +20,15 @@
                     <table class="table align-middle mb-0" style="border-radius: 0 0 12px 12px; overflow: hidden;">
                         <thead style="background: #fff;">
                             <tr style="font-size: 16px; font-weight: 600; padding-top: 14px; padding-bottom: 14px;">
-                                <th class="gradient-green-text" style="padding-left: 20px; padding-right: 20px;">Program ID</th>
-                                <th class="gradient-green-text" style="padding-left: 20px; padding-right: 20px;">Logo</th>
-                                <th class="gradient-green-text" style="padding-left: 20px; padding-right: 20px;">Program Name</th>
-                                <th class="gradient-green-text" style="padding-left: 20px; padding-right: 20px;">Description</th>
-                                <th class="gradient-green-text" style="padding-left: 20px; padding-right: 20px;">Program Type</th>
-                                <th class="gradient-green-text" style="padding-left: 20px; padding-right: 20px;">Date Created</th>
-                                <th class="gradient-green-text" style="padding-left: 20px; padding-right: 20px;">Director</th>
-                                <th class="gradient-green-text" style="padding-left: 20px; padding-right: 20px;">Total Events</th>
-                                <th class="gradient-green-text" style="padding-left: 20px; padding-right: 20px;">Action</th>
+                                <th class="gradient-green-text text-start" style="padding-left: 20px; padding-right: 20px; text-align: left !important;">Program ID</th>
+                                <th class="gradient-green-text text-start" style="padding-left: 20px; padding-right: 20px; text-align: left !important;">Logo</th>
+                                <th class="gradient-green-text text-start" style="padding-left: 20px; padding-right: 20px; text-align: left !important;">Program Name</th>
+                                <th class="gradient-green-text text-start" style="padding-left: 20px; padding-right: 20px; text-align: left !important;">Description</th>
+                                <th class="gradient-green-text text-start" style="padding-left: 20px; padding-right: 20px; text-align: left !important;">Program Type</th>
+                                <th class="gradient-green-text text-start" style="padding-left: 20px; padding-right: 20px; text-align: left !important;">Date Created</th>
+                                <th class="gradient-green-text text-start" style="padding-left: 20px; padding-right: 20px; text-align: left !important;">Director</th>
+                                <th class="gradient-green-text text-start" style="padding-left: 20px; padding-right: 20px; text-align: left !important;">Total Events</th>
+                                <th class="gradient-green-text text-start" style="padding-left: 20px; padding-right: 20px; text-align: left !important;">Action</th>
                             </tr>
                             <tr>
                                 <td colspan="9" style="padding: 0;">
@@ -51,71 +51,71 @@
                         </style>
                         <tbody>
                             <tr>
-                                <td>P0001</td>
-                                <td><img src="/img/programs/adal_kordilyera.png" alt="Adal Kordilyera" style="height:40px;"></td>
-                                <td>Adal Kordilyera</td>
-                                <td>Adal Kordilyera is digital information-sharing...</td>
-                                <td>Skills Development Webinars</td>
-                                <td>12-01-2024</td>
-                                <td>Jessica Bilat</td>
-                                <td>20</td>
-                                <td>
+                                <td class="text-start" style="text-align: left !important;">P0001</td>
+                                <td class="text-start" style="text-align: left !important;"><img src="/img/programs/adal_kordilyera.png" alt="Adal Kordilyera" style="height:40px;"></td>
+                                <td class="text-start" style="text-align: left !important;">Adal Kordilyera</td>
+                                <td class="text-start" style="text-align: left !important;">Adal Kordilyera is digital information-sharing...</td>
+                                <td class="text-start" style="text-align: left !important;">Skills Development Webinars</td>
+                                <td class="text-start" style="text-align: left !important;">12-01-2024</td>
+                                <td class="text-start" style="text-align: left !important;">Jessica Bilat</td>
+                                <td class="text-start" style="text-align: left !important;">20</td>
+                                <td class="text-start" style="text-align: left !important;">
                                     <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
                                     <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
                                 </td>
                             </tr>
                             <tr>
-                                <td>P0002</td>
-                                <td><img src="/img/programs/kordi_arts.png" alt="Kordi Arts" style="height:40px;"></td>
-                                <td>Kordi Arts</td>
-                                <td>KordiArts is an art-based initiative that promotes...</td>
-                                <td>Art Workshops</td>
-                                <td>12-01-2024</td>
-                                <td>Jessica Bilat</td>
-                                <td>20</td>
-                                <td>
+                                <td class="text-start" style="text-align: left !important;">P0002</td>
+                                <td class="text-start" style="text-align: left !important;"><img src="/img/programs/kordi_arts.png" alt="Kordi Arts" style="height:40px;"></td>
+                                <td class="text-start" style="text-align: left !important;">Kordi Arts</td>
+                                <td class="text-start" style="text-align: left !important;">KordiArts is an art-based initiative that promotes...</td>
+                                <td class="text-start" style="text-align: left !important;">Art Workshops</td>
+                                <td class="text-start" style="text-align: left !important;">12-01-2024</td>
+                                <td class="text-start" style="text-align: left !important;">Jessica Bilat</td>
+                                <td class="text-start" style="text-align: left !important;">20</td>
+                                <td class="text-start" style="text-align: left !important;">
                                     <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
                                     <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
                                 </td>
                             </tr>
                             <tr>
-                                <td>P0003</td>
-                                <td><img src="/img/programs/sirib_leadership.png" alt="Sirib Leadership" style="height:40px;"></td>
-                                <td>Sirib Leadership...</td>
-                                <td>Sirib Leadership Essentials is a skills development...</td>
-                                <td>Leadership Trainings</td>
-                                <td>12-01-2024</td>
-                                <td>Jessica Bilat</td>
-                                <td>20</td>
-                                <td>
+                                <td class="text-start" style="text-align: left !important;">P0003</td>
+                                <td class="text-start" style="text-align: left !important;"><img src="/img/programs/sirib_leadership.png" alt="Sirib Leadership" style="height:40px;"></td>
+                                <td class="text-start" style="text-align: left !important;">Sirib Leadership...</td>
+                                <td class="text-start" style="text-align: left !important;">Sirib Leadership Essentials is a skills development...</td>
+                                <td class="text-start" style="text-align: left !important;">Leadership Trainings</td>
+                                <td class="text-start" style="text-align: left !important;">12-01-2024</td>
+                                <td class="text-start" style="text-align: left !important;">Jessica Bilat</td>
+                                <td class="text-start" style="text-align: left !important;">20</td>
+                                <td class="text-start" style="text-align: left !important;">
                                     <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
                                     <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
                                 </td>
                             </tr>
                             <tr>
-                                <td>P0004</td>
-                                <td><img src="/img/programs/project_hope.png" alt="Project H.O.P.E" style="height:40px;"></td>
-                                <td>Project H.O.P.E</td>
-                                <td>Project H.O.P.E is a series of initiatives that aim to raise...</td>
-                                <td>Mental Health and Wellness</td>
-                                <td>12-01-2024</td>
-                                <td>Jessica Bilat</td>
-                                <td>20</td>
-                                <td>
+                                <td class="text-start" style="text-align: left !important;">P0004</td>
+                                <td class="text-start" style="text-align: left !important;"><img src="/img/programs/project_hope.png" alt="Project H.O.P.E" style="height:40px;"></td>
+                                <td class="text-start" style="text-align: left !important;">Project H.O.P.E</td>
+                                <td class="text-start" style="text-align: left !important;">Project H.O.P.E is a series of initiatives that aim to raise...</td>
+                                <td class="text-start" style="text-align: left !important;">Mental Health and Wellness</td>
+                                <td class="text-start" style="text-align: left !important;">12-01-2024</td>
+                                <td class="text-start" style="text-align: left !important;">Jessica Bilat</td>
+                                <td class="text-start" style="text-align: left !important;">20</td>
+                                <td class="text-start" style="text-align: left !important;">
                                     <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
                                     <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
                                 </td>
                             </tr>
                             <tr>
-                                <td>P0005</td>
-                                <td><img src="/img/programs/project_dalluyon.png" alt="Project Dalluyon" style="height:40px;"></td>
-                                <td>Project Dalluyon</td>
-                                <td>Project Dalluyon is a program focused on addressing gen...</td>
-                                <td>Mental Health and Wellness</td>
-                                <td>12-01-2024</td>
-                                <td>Jessica Bilat</td>
-                                <td>20</td>
-                                <td>
+                                <td class="text-start" style="text-align: left !important;">P0005</td>
+                                <td class="text-start" style="text-align: left !important;"><img src="/img/programs/project_dalluyon.png" alt="Project Dalluyon" style="height:40px;"></td>
+                                <td class="text-start" style="text-align: left !important;">Project Dalluyon</td>
+                                <td class="text-start" style="text-align: left !important;">Project Dalluyon is a program focused on addressing gen...</td>
+                                <td class="text-start" style="text-align: left !important;">Mental Health and Wellness</td>
+                                <td class="text-start" style="text-align: left !important;">12-01-2024</td>
+                                <td class="text-start" style="text-align: left !important;">Jessica Bilat</td>
+                                <td class="text-start" style="text-align: left !important;">20</td>
+                                <td class="text-start" style="text-align: left !important;">
                                     <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
                                     <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
                                 </td>
