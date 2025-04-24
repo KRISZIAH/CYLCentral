@@ -1,38 +1,11 @@
 @extends('layouts.adminside')
 
 @section('content')
-<div class="container-fluid p-3 top">
-  <div class="d-flex justify-content-between align-items-center p-3">
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb mb-0 align-items-center">
-        <li class="breadcrumb-item">
-          <a href="#" class="text-decoration-none">Dashboard</a>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">
-          Overview
-        </li>
-      </ol>
-    </nav>
+@include('admin.db_navbar', ['section' => 'Overview'])
 
-    <!-- User Profile Section -->
-    <div class="d-flex align-items-center AdminProfile">
-      <div class="nav-icons">
-        <i class="bi bi-chat-dots"></i>
-        <i class="bi bi-bell"></i>
-      </div>
-      <div class="user-info">
-        <img src="https://via.placeholder.com/35" alt="Profile" class="profile-img">
-        <div class="ms-2">
-          <div class="user-name">Jennifer Moltio</div>
-          <div class="user-role">Admin</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="top-divider"></div>
-
+  <!-- partial/Welcome -->
+  <div class="main-panel">
+    <div class="content-wrapper p-4">
   <!-- partial/Welcome -->
   <div class="main-panel">
     <div class="content-wrapper p-4">

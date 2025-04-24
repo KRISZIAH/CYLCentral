@@ -24,6 +24,6 @@ public function dashboard_users()
         }
         
         $users = User::orderBy('created_at', 'desc')->paginate(10);
-        return view('admin.dashboard_users', compact('users'));
+        return view('admin.db_users', compact('users'));
     }
 }

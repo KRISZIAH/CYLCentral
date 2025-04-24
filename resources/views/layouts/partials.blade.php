@@ -22,7 +22,7 @@
     @vite('resources/css/auth-css/login.css')
 
     <!-- Styles for admin -->
-    @vite('resources/css/admin-css/dashboard_analytics.css')
+    @vite('resources/css/admin-css/db_overview.css')
 
     <!-- Bootstrap and Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">

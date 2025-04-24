@@ -46,13 +46,18 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth:admin'])->group(function () {
     Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
     Route::get('/users', [PageController::class, 'dashboard_users'])->name('users');
-
+    Route::get('/programs', function () {
+        return view('admin.db_programs');
+    })->name('programs');
+    Route::get('/events', [PageController::class, 'eventcatalog'])->name('events');
 });
 
 // for redirections in admin sidebar
 Route::get('/cms', function () {
-    return redirect('/home');  // Redirects to the homepage or any existing route
-})->name('cms');
+    return redirect()->route('programs');
+});
+
+
 
 Route::get('/users', function () {
     return redirect('/home');  // Redirects to the homepage or any existing route

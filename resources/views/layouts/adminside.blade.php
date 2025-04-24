@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="{{ asset('img/logos/cylcentral-logo1.png') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title') - CYLCentral</title>
@@ -13,9 +14,9 @@
 
     <!-- Styles -->
     @vite('resources/css/app.css')
-    @vite('resources/css/admin-css/dashboard_analytics.css')
+    @vite('resources/css/admin-css/db_overview.css')
     @vite('resources/css/partials-css/admin_sidebar.css')
-    @vite('resources/css/admin-css/dashboard_users.css')
+    @vite('resources/css/admin-css/db_users.css')
 
 
     <!-- Bootstrap and Icons -->
@@ -166,7 +167,7 @@
     @vite('resources/js/charts/partnergroups.js')
     @vite('resources/js/charts/regularmember.js')
     @vite('resources/js/main-js/eventpages.js')
-    @vite('resources/js/admin-js/dashboard_user.js')
+    @vite('resources/js/admin-js/db_users.js')
 
 </body>
 </html>

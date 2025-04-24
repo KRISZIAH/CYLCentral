@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="{{ asset('img/logos/cylcentral-logo1.png') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title') - CYLCentral</title>
@@ -22,6 +23,7 @@
     @vite('resources/css/main-css/files.css')
     @vite('resources/css/main-css/eventpages.css')
     @vite('resources/css/partials-css/navbar.css')
+    @vite('resources/css/partials-css/navbar-main.css')
     @vite('resources/css/partials-css/footer.css')
 
     <!-- Styles for login/registration -->
@@ -29,9 +31,9 @@
     @vite('resources/css/auth-css/login.css')
 
     <!-- Styles for admin -->
-    @vite('resources/css/admin-css/dashboard_analytics.css')
+    @vite('resources/css/admin-css/db_overview.css')
     @vite('resources/css/partials-css/admin_sidebar.css')
-    @vite('resources/css/admin-css/dashboard_users.css')
+    @vite('resources/css/admin-css/db_users.css')
 
     <!-- Bootstrap and Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -48,7 +50,9 @@
     <!-- Main Content -->
     <main>
         <div id="pjax-content">
-            @yield('content')
+            {{-- To use the main content navbar widget, add this to your page: --}}
+    {{-- @include('partials.navbar-main') --}}
+    @yield('content')
         </div>
     </main>
 

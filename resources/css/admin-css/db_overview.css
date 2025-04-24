@@ -46,7 +46,7 @@
 
 /* Divider */
 .top-divider {
-    border-top: 1px solid var(--green1); 
+    border-top: 1px solid rgba(228, 241, 234, 0.5); /* mint at 50% opacity */
     width: 95%;
     background-color: transparent;
     margin: 0 auto;

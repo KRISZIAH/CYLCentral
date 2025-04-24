@@ -55,7 +55,7 @@ class PageController extends Controller
     //For Admins
     public function dashboard()
     {
-        return view('admin.dashboard_analytics');
+        return view('admin.db_overview');
     }
 
     // public function dashboard_users()

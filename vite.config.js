@@ -29,11 +29,11 @@ export default defineConfig({
                 'resources/js/main-js/eventpages.js',
                 
                 // Admin CSS files
-                'resources/css/admin-css/dashboard_analytics.css',
-                'resources/css/admin-css/dashboard_users.css',
+                'resources/css/admin-css/db_overview.css',
+                'resources/css/admin-css/db_users.css',
                 
                 // Admin JS files
-                'resources/js/admin-js/dashboard_user.js',
+                'resources/js/admin-js/db_users.js',
                 
                 // Chart JS files
                 'resources/js/charts/totalevents.js',
