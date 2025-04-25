@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +26,7 @@
     @vite('resources/css/auth-css/login.css')
 
     <!-- Styles for admin -->
-    @vite('resources/css/admin/dashboard_analytics.css')
+    @vite('resources/css/admin-css/dashboard_analytics.css')
 
 
     <!-- Bootstrap and Icons -->
@@ -54,9 +52,7 @@
 
     <!-- Page-specific scripts -->
     @vite('resources/js/app.js')
-    @vite('resources/js/main-js/home.js')
     @vite('resources/js/main-js/editprofile.js')
-    @vite('resources/js/main-js/eventcatalog.js')
     @vite('resources/js/charts/totalevents.js')
     @vite('resources/js/charts/partnergroups.js')
     @vite('resources/js/charts/regularmember.js')

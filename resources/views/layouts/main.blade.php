@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
     <!-- Styles -->
@@ -24,17 +22,17 @@
     @vite('resources/css/main-css/eventcatalog.css')
     @vite('resources/css/main-css/files.css')
     @vite('resources/css/main-css/eventpages.css')
+    @vite('resources/css/main-css/eventregis.css')
     @vite('resources/css/partials-css/navbar.css')
     @vite('resources/css/partials-css/footer.css')
 
-    @vite('resources/css/partials-css/navbar1.css')
 
     <!-- Styles for login/registration -->
     @vite('resources/css/auth-css/register.css')
     @vite('resources/css/auth-css/login.css')
 
     <!-- Styles for admin -->
-    @vite('resources/css/admin/dashboard_analytics.css')
+    @vite('resources/css/admin-css/dashboard_analytics.css')
 
 
     <!-- Bootstrap and Icons -->
@@ -68,13 +66,12 @@
 
     <!-- Page-specific scripts -->
     @vite('resources/js/app.js')
-    @vite('resources/js/main-js/home.js')
     @vite('resources/js/main-js/editprofile.js')
-    @vite('resources/js/main-js/eventcatalog.js')
     @vite('resources/js/charts/totalevents.js')
     @vite('resources/js/charts/partnergroups.js')
     @vite('resources/js/charts/regularmember.js')
     @vite('resources/js/main-js/eventpages.js')
+    @vite('resources/js/main-js/eventregis.js')
     @vite('resources/js/partials-js/navbar.js')
     @vite('resources/js/partials-js/footer.js')
 
