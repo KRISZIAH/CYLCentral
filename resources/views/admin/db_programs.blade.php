@@ -9,7 +9,7 @@
                 <span style="font-size:20px; font-weight:600; color: var(--green1);">Create Program</span>
                 <div class="ms-auto d-flex">
                     <a href="{{ route('db_draftprog') }}" class="me-3 px-4 py-2" style="background: transparent; color: var(--brown); border: 1.5px solid var(--brown); border-radius: 8px; font-size: 16px; font-weight: 500; text-decoration: none; display: inline-block;">Drafts</a>
-                    <a href="{{ route('db_newprogram') }}" class="px-4 py-2" style="background: var(--gradient-brown); color: white; border-radius: 8px; font-size: 16px; font-weight: 500; border: none; text-decoration: none; display: inline-block;">Add New</a>
+                    <a href="{{ route('db_newprogram') }}" class="px-4 py-2" style="background: var(--gradient-brown); color: white; border-radius: 8px; font-size: 16px; font-weight: 500; border: none; text-decoration: none; display: inline-block;"><i class="bi bi-plus-circle me-2"></i>Add New</a>
                 </div>
             </div>
             <div class="rounded shadow-sm p-0" style="background: white;">
