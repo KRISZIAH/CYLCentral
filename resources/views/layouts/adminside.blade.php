@@ -17,6 +17,7 @@
     @vite('resources/css/admin-css/db_overview.css')
     @vite('resources/css/partials-css/admin_sidebar.css')
     @vite('resources/css/admin-css/db_users.css')
+    @vite('resources/css/admin-css/db_programs.css')
 
 
     <!-- Bootstrap and Icons -->

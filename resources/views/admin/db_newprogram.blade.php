@@ -21,6 +21,15 @@
                             <label class="form-label fw-semibold" for="programTitle" style="color: var(--green1); font-size: 16px; font-weight: 600;">Title</label>
                             <input type="text" class="form-control gradient-green-input" id="programTitle" placeholder="Program Name" style="background: #fff; border: 1px solid rgba(0,61,43,0.5); border-radius: 5px; font-size:16px; font-weight:600; color: var(--green1);" />
 <style>
+/* Custom focus border for all relevant inputs */
+.form-control:focus, .form-control:focus-visible,
+.user-multiselect-input input:focus, .user-multiselect-input input:focus-visible,
+#programDesc:focus, #programDesc:focus-visible {
+    border-width: 2px !important;
+    border-color: rgba(0,61,43,0.8) !important; /* var(--green1) at 80% opacity */
+    box-shadow: none !important;
+    outline: none !important;
+}
 .gradient-green-input::placeholder, .green1-opacity-input::placeholder {
     color: rgba(0,61,43,0.5) !important; /* var(--green1) at 50% opacity */
     opacity: 1;
@@ -32,11 +41,16 @@
                         <div class="row g-3 mb-3">
                             <div class="col-md-5 d-flex flex-column justify-content-start">
                                 <label class="form-label fw-semibold mb-1" for="programLogo" style="color: var(--green1); font-size: 16px; font-weight: 600; text-align:left;">Logo</label>
-                                <div class="border-dashed d-flex flex-column align-items-center justify-content-center mb-2" style="height:230px; width:230px; border:2px dashed rgba(0,61,43,0.5); border-radius:12px;">
-                                    <i class="bi bi-image fs-1" style="color: var(--green1);"></i>
-                                    <span class="upload-note d-block text-center" style="font-style: italic; font-weight: 500; font-size: 12px; background: var(--gradient-green); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent; line-height: 1.3;">Note: Upload here<br>supported file. Max 10 MB</span>
+                                <div class="border-dashed d-flex flex-column align-items-center justify-content-center mb-2 position-relative" style="height:230px; width:230px; border:2px dashed rgba(0,61,43,0.5); border-radius:12px; overflow:hidden; cursor:pointer;">
                                 </div>
-                                <button class="btn" style="width:150px; border-radius:8px; background:var(--gradient-brown); color:#fff; margin-top: 4px;">Upload Image</button>
+                                <small class="text-muted mt-1" style="font-size: 12px;">
+  <span style="color:#b0b0b0; font-weight:400;">Max file size:</span>
+  <span style="color:#6c757d; font-weight:700;">5 MB</span>
+  <span style="margin-left:12px;"></span>
+  <span style="color:#b0b0b0; font-weight:400;">File type:</span>
+  <span style="color:#6c757d; font-weight:700;">png</span>
+</small>
+                                @vite(['resources/js/admin-js/db_newprogram_upload.js'])
                             </div>
                             <div class="col-md-7">
                                 <label class="form-label fw-semibold" for="programDesc" style="color: var(--green1); font-size: 16px; font-weight: 600;">Description</label>
@@ -321,6 +335,40 @@ userInput.addEventListener('keydown', function(e){
                                 </select>
                             </div>
                         </div>
+                        <style>
+                            .gradient-green-text {
+                                background: var(--gradient-green);
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                                background-clip: text;
+                                color: transparent;
+                                font-size: 16px !important;
+                                font-weight: 600 !important;
+                                padding-top: 14px !important;
+                                padding-bottom: 14px !important;
+                            }
+                            /* Subtle vertical grid lines for table columns */
+                            .program-table th:not(:last-child),
+                            .program-table td:not(:last-child) {
+                                border-right: 1px solid rgba(0,61,43,0.5); /* --green2 at 50% opacity */
+                            }
+                            .program-table th {
+                                padding-left: 0px;
+                                padding-right: 20px;
+                            }
+                            .program-table th, .program-table td {
+                                /* Remove default borders if any and keep only our custom lines */
+                                border-top: none;
+                                border-bottom: none;
+                                text-align: left;
+                                vertical-align: middle;
+                                word-break: break-word;
+                            }
+                            .program-table td {
+                                padding-left: 20px;
+                                padding-right: 20px;
+                            }
+                        </style>
                         <div class="mb-2">
                             <div class="small fw-semibold mb-1">Assign Background Color</div>
                             <div class="d-flex gap-2">

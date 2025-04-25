@@ -1,6 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+Route::get('/db_draftprog', function () {
+    return view('admin.db_draftprog');
+})->name('db_draftprog');
+
+Route::get('/db_programs', function () {
+    return view('admin.db_programs');
+})->name('db_programs');
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\PageController;

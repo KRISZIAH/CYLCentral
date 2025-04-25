@@ -12,7 +12,6 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/js/app.js',
 
-                
                 // Main CSS files
                 'resources/css/main-css/home.css',
                 'resources/css/main-css/membershippage.css',
@@ -31,9 +30,17 @@ export default defineConfig({
                 // Admin CSS files
                 'resources/css/admin-css/db_overview.css',
                 'resources/css/admin-css/db_users.css',
+                'resources/css/admin-css/db_programs.css',
+                // Draft Programs CSS (reuse programs CSS for now)
+                'resources/css/admin-css/db_programs.css', // For drafts page
+
                 
                 // Admin JS files
                 'resources/js/admin-js/db_users.js',
+                'resources/js/admin-js/db_newprogram_upload.js',
+                // Draft Programs JS (reuse users or add new if needed)
+                // 'resources/js/admin-js/db_draftprog.js',
+
                 
                 // Chart JS files
                 'resources/js/charts/totalevents.js',
@@ -52,6 +59,9 @@ export default defineConfig({
                 // Partials JS files
                 'resources/js/partials-js/navbar.js',
                 'resources/js/partials-js/footer.js',
+                // Blade views for Vite hot reload
+                'resources/views/admin/db_programs.blade.php',
+                'resources/views/admin/db_draftprog.blade.php',
                 
                 // Commented files for reference
                 // 'resources/css/announcement_tab.css',

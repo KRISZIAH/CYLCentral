@@ -6,15 +6,15 @@
     <div class="row justify-content-center">
         <div class="col-lg-11">
             <div class="d-flex align-items-center mb-3">
-                <span style="font-size:20px; font-weight:600; color: var(--green1);">Create Program</span>
+                <span style="font-size:20px; font-weight:600; color: var(--green1);">Draft Programs</span>
                 <div class="ms-auto d-flex">
-                    <a href="{{ route('db_draftprog') }}" class="me-3 px-4 py-2" style="background: transparent; color: var(--brown); border: 1.5px solid var(--brown); border-radius: 8px; font-size: 16px; font-weight: 500; text-decoration: none; display: inline-block;">Drafts</a>
+                    <a href="{{ route('db_programs') }}" class="me-3 px-4 py-2" style="background: transparent; color: var(--green1); border: 1.5px solid var(--green1); border-radius: 8px; font-size: 16px; font-weight: 500; text-decoration: none; display: inline-block;">Published</a>
                     <a href="{{ route('db_newprogram') }}" class="px-4 py-2" style="background: var(--gradient-brown); color: white; border-radius: 8px; font-size: 16px; font-weight: 500; border: none; text-decoration: none; display: inline-block;">Add New</a>
                 </div>
             </div>
             <div class="rounded shadow-sm p-0" style="background: white;">
                 <div class="d-flex align-items-center justify-content-between px-4" style="background: var(--gradient-green); border-radius: 12px 12px 0 0; height:53px;">
-                    <span style="font-size: 18px; font-weight: 600; color: white;">Program List</span>
+                    <span style="font-size: 18px; font-weight: 600; color: white;">Draft Program List</span>
                     <button class="d-flex align-items-center" style="background: transparent; border: none; color: white; border-radius: 8px; font-size: 15px; font-weight: 500;">
                         <i class="bi bi-funnel-fill me-2" style="color: white;"></i> Filter by
                     </button>
@@ -30,8 +30,17 @@
                                 background: #fff;
                                 font-size: 16px;
                                 font-weight: 600;
-                                position: relative;
                             }
+                            
+                            .pagination-arrow i {
+                                font-weight: bold;
+                                font-size: 22px;
+                            }
+                            
+                            .pagination-arrow.opacity-50 {
+                                opacity: 0.5;
+                            }
+                            
                             .gradient-green-text {
                                 background: var(--gradient-green);
                                 -webkit-background-clip: text;
@@ -39,23 +48,12 @@
                                 background-clip: text;
                                 color: transparent;
                             }
+                            
                             .program-table th:not(:last-child),
                             .program-table td:not(:last-child) {
                                 border-right: 1px solid rgba(0,61,43,0.15);
                             }
-                            /* Center-align all columns except Description (4th) */
-                            .program-table th:not(:nth-child(4)),
-                            .program-table td:not(:nth-child(4)) {
-                                text-align: center;
-                            }
-                            /* Keep Description left-aligned */
-                            .program-table th:nth-child(4),
-                            .program-table td:nth-child(4) {
-                                text-align: left;
-                            }
-                            .program-table thead tr:first-child th {
-                                border-bottom: 2px solid var(--gradient-green);
-                            }
+                            
                             .program-table tbody tr {
                                 border-bottom: 1px solid rgba(0,61,43,0.1);
                             }
@@ -64,7 +62,7 @@
                             }
                             
                             /* Remove bottom border/grid */
-                            .table {
+                            .table {                                
                                 border-bottom: none !important;
                                 margin-bottom: 0 !important;
                             }
@@ -83,6 +81,18 @@
                             .program-table td:nth-child(2) {
                                 max-width: 150px;
                                 width: 150px;
+                            }
+                            
+                            /* Center-align all columns except Description (4th) */
+                            .program-table th:not(:nth-child(4)),
+                            .program-table td:not(:nth-child(4)) {
+                                text-align: center;
+                            }
+                            
+                            /* Keep Description left-aligned */
+                            .program-table th:nth-child(4),
+                            .program-table td:nth-child(4) {
+                                text-align: left;
                             }
                             
                             /* Custom Pagination Styling */
@@ -105,15 +115,6 @@
                                 text-decoration: none;
                             }
                             
-                            .pagination-arrow i {
-                                font-weight: bold;
-                                font-size: 22px;
-                            }
-                            
-                            .pagination-arrow.opacity-50 {
-                                opacity: 0.5;
-                            }
-                            
                             .pagination-number {
                                 display: flex;
                                 align-items: center;
@@ -130,27 +131,40 @@
                                 background-color: var(--green1);
                                 color: white;
                             }
+                            
+                            /* Publish button styling */
+                            .publish-btn {
+                                background: var(--gradient-green);
+                                color: white;
+                                border: none;
+                                border-radius: 6px;
+                                padding: 5px 10px;
+                                font-size: 14px;
+                                font-weight: 500;
+                                cursor: pointer;
+                            }
                         </style>
                         <thead>
                             <tr>
-                                <th class="gradient-green-text">Program ID</th>
-                                <th class="gradient-green-text">Logo</th>
-                                <th class="gradient-green-text">Program Name</th>
-                                <th class="gradient-green-text">Description</th>
-                                <th class="gradient-green-text">Program Type</th>
-                                <th class="gradient-green-text">Date Created</th>
-                                <th class="gradient-green-text">Director</th>
-                                <th class="gradient-green-text">Total Events</th>
-                                <th class="gradient-green-text">Action</th>
+                                <th class="gradient-green-text" style="background-image: ; background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-clip: text; background-color: ; -webkit-text-fill-color: transparent;">Program ID</th>
+                                <th class="gradient-green-text" style="background-image: ; background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-clip: text; background-color: ; -webkit-text-fill-color: transparent; width: auto;">Logo</th>
+                                <th class="gradient-green-text" style="background-image: ; background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-clip: text; background-color: ; -webkit-text-fill-color: transparent;">Program Name</th>
+                                <th class="gradient-green-text" style="background-image: ; background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-clip: text; background-color: ; -webkit-text-fill-color: transparent;">Description</th>
+                                <th class="gradient-green-text" style="background-image: ; background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-clip: text; background-color: ; -webkit-text-fill-color: transparent;">Program Type</th>
+                                <th class="gradient-green-text" style="background-image: ; background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-clip: text; background-color: ; -webkit-text-fill-color: transparent;">Date Created</th>
+                                <th class="gradient-green-text" style="background-image: ; background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-clip: text; background-color: ; -webkit-text-fill-color: transparent;">Director</th>
+                                <th class="gradient-green-text" style="background-image: ; background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-clip: text; background-color: ; -webkit-text-fill-color: transparent;">Total Events</th>
+                                <th class="gradient-green-text" style="background-image: ; background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-clip: text; background-color: ; -webkit-text-fill-color: transparent;">Action</th>
+                                <th class="gradient-green-text" style="background-image: ; background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-clip: text; background-color: ; -webkit-text-fill-color: transparent;">Publish</th>
                             </tr>
                             <tr>
-                                <th colspan="9" style="padding: 0;"></th>
+                                <th colspan="10" style="padding: 0;"></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>P0001</td>
-                                <td><img src="/img/programs/adal_kordilyera.png" alt="Adal Kordilyera" style="height:40px; max-width: none;"></td>
+                                <td>D0001</td>
+                                <td><img src="/img/programs/adal_kordilyera.png" alt="Adal Kordilyera" style="height:40px; max-width: 130px;"></td>
                                 <td>Adal Kordilyera</td>
                                 <td>Adal Kordilyera is digital information-sharing...</td>
                                 <td>Skills Development Webinars</td>
@@ -161,10 +175,13 @@
                                     <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
                                     <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
                                 </td>
+                                <td>
+                                    <button class="publish-btn">Publish</button>
+                                </td>
                             </tr>
                             <tr>
-                                <td>P0002</td>
-                                <td><img src="/img/programs/kordi_arts.png" alt="Kordi Arts" style="height:40px; max-width: none;"></td>
+                                <td>D0002</td>
+                                <td><img src="/img/programs/kordi_arts.png" alt="Kordi Arts" style="height:40px; max-width: 130px;"></td>
                                 <td>Kordi Arts</td>
                                 <td>KordiArts is an art-based initiative that promotes...</td>
                                 <td>Art Workshops</td>
@@ -174,6 +191,9 @@
                                 <td>
                                     <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
                                     <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
+                                </td>
+                                <td>
+                                    <button class="publish-btn">Publish</button>
                                 </td>
                             </tr>
                             <!-- Additional rows can be added here -->
@@ -218,20 +238,20 @@
         // Sample data for demonstration
         const pages = {
             1: [
-                { id: 'P0001', name: 'Adal Kordilyera', desc: 'Adal Kordilyera is digital information-sharing...', type: 'Skills Development Webinars' },
-                { id: 'P0002', name: 'Kordi Arts', desc: 'KordiArts is an art-based initiative that promotes...', type: 'Art Workshops' }
+                { id: 'D0001', name: 'Adal Kordilyera', desc: 'Adal Kordilyera is digital information-sharing...', type: 'Skills Development Webinars' },
+                { id: 'D0002', name: 'Kordi Arts', desc: 'KordiArts is an art-based initiative that promotes...', type: 'Art Workshops' }
             ],
             2: [
-                { id: 'P0003', name: 'Siribs', desc: 'Siribs is a cultural preservation program...', type: 'Cultural Preservation' },
-                { id: 'P0004', name: 'Hope Project', desc: 'Hope Project focuses on community development...', type: 'Community Development' }
+                { id: 'D0003', name: 'Siribs', desc: 'Siribs is a cultural preservation program...', type: 'Cultural Preservation' },
+                { id: 'D0004', name: 'Hope Project', desc: 'Hope Project focuses on community development...', type: 'Community Development' }
             ],
             3: [
-                { id: 'P0005', name: 'Dalluyon', desc: 'Dalluyon is an environmental awareness initiative...', type: 'Environmental Awareness' },
-                { id: 'P0006', name: '10KOK', desc: '10KOK is a youth leadership program...', type: 'Youth Leadership' }
+                { id: 'D0005', name: 'Dalluyon', desc: 'Dalluyon is an environmental awareness initiative...', type: 'Environmental Awareness' },
+                { id: 'D0006', name: '10KOK', desc: '10KOK is a youth leadership program...', type: 'Youth Leadership' }
             ],
             4: [
-                { id: 'P0007', name: 'Pansigedan', desc: 'Pansigedan focuses on indigenous knowledge...', type: 'Indigenous Knowledge' },
-                { id: 'P0008', name: 'Sumya', desc: 'Sumya is a mental health awareness program...', type: 'Mental Health' }
+                { id: 'D0007', name: 'Pansigedan', desc: 'Pansigedan focuses on indigenous knowledge...', type: 'Indigenous Knowledge' },
+                { id: 'D0008', name: 'Sumya', desc: 'Sumya is a mental health awareness program...', type: 'Mental Health' }
             ]
         };
         
@@ -301,8 +321,18 @@
                         <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
                         <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
                     </td>
+                    <td>
+                        <button class="publish-btn">Publish</button>
+                    </td>
                 `;
                 tbody.appendChild(row);
+                
+                // Add event listener to publish button
+                const publishBtn = row.querySelector('.publish-btn');
+                publishBtn.addEventListener('click', function() {
+                    alert(`Publishing program: ${item.name}`);
+                    // In a real application, this would send an AJAX request to publish the program
+                });
             });
         }
         

@@ -1,0 +1,52 @@
+.program-table th {
+    text-align: left;
+    vertical-align: middle;
+    padding: 4px 20px;
+    word-break: break-word;
+    background-color: #fff;
+    background-image: var(--gradient-green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* fallback solid color */
+    color: var(--green1);
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+}
+
+.program-table td {
+    vertical-align: middle;
+    padding: 14px 20px;
+    word-break: break-word;
+}
+
+.program-table td:nth-child(1),
+.program-table td:nth-child(2),
+.program-table td:nth-child(3),
+.program-table td:nth-child(4) {
+    text-align: left;
+}
+
+.program-table th:not(:last-child),
+.program-table td:not(:last-child) {
+    border-right: 1px solid rgba(0,61,43,0.15);
+}
+
+.program-table thead tr:first-child th {
+    border-bottom: 2px solid var(--gradient-green);
+}
+
+.program-table thead tr:last-child th {
+    padding: 0;
+    height: 2px;
+    background: var(--gradient-green);
+}
+
+.gradient-green-text {
+    background: var(--gradient-green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
