@@ -22,12 +22,16 @@
     @vite('resources/css/main-css/home.css')
     @vite('resources/css/main-css/aboutpage.css')
     @vite('resources/css/main-css/membershippage.css')
+    @vite('resources/css/main-css/membership_registration.css')
     @vite('resources/css/main-css/editprofile.css')
     @vite('resources/css/main-css/eventcatalog.css')
     @vite('resources/css/main-css/files.css')
     @vite('resources/css/main-css/eventpages.css')
     @vite('resources/css/partials-css/navbar.css')
     @vite('resources/css/partials-css/footer.css')
+
+    <!-- Styles for Users(Login) -->
+    @vite('resources/css/users-css/announcement.css')
 
     <!-- Styles for login/registration -->
     @vite('resources/css/auth-css/register.css')
@@ -71,12 +75,19 @@
     @vite('resources/js/main-js/home.js')
     @vite('resources/js/main-js/editprofile.js')
     @vite('resources/js/main-js/eventcatalog.js')
-    @vite('resources/js/charts/totalevents.js')
-    @vite('resources/js/charts/partnergroups.js')
-    @vite('resources/js/charts/regularmember.js')
     @vite('resources/js/main-js/eventpages.js')
     @vite('resources/js/partials-js/navbar.js')
     @vite('resources/js/partials-js/footer.js')
+
+    <!-- Scripts for Users(Login) -->
+    @vite('resources/js/user-js/announcement.js')
+
+    <!-- Scripts for Dashboard -->
+    @vite('resources/js/charts/totalevents.js')
+    @vite('resources/js/charts/partnergroups.js')
+    @vite('resources/js/charts/regularmember.js')
+    
+    
 
 </body>
 </html>

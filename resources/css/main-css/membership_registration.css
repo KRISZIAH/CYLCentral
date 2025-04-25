@@ -1,0 +1,116 @@
+.herosection {
+    position: relative;
+    padding: 20px 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+   
+  }
+
+  .membership_reg-section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+
+  .membership_reg-content {
+    position: relative;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 200px;
+  }
+  .underline {
+    width: 50px;
+    height: 4px;
+    background-color:var(--brown);
+    margin: 10px auto 0;
+  }
+  
+  
+  .hero .container{
+    justify-content: center;
+    position: relative;
+    background-color: #ffff;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .container .stat-item1 {
+    max-width: 8800px;
+    margin: auto;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .logo {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .stat-item1  img {
+    width: 400px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .title {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--brown);
+  }
+  .subtitle {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--green2);
+  }
+  .content {
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--green1);
+  }
+
+  .highlight {
+    font-weight: bold;
+  }
+  
+  /*--------------------------------------------------------------
+  # Global Section Titles (do not delete)
+  --------------------------------------------------------------*/
+  .section-title {
+    text-align: center;
+    padding-bottom: 50px;
+    position: relative;
+  }
+  
+  .section-title h2 {
+    font-size: 24px;
+    color: var(--brown);
+    font-weight: semi-bold;
+    padding-bottom: 20px;
+  }
+  
+  .section-title p {
+    margin-bottom: 0;
+    color: var(--green1);
+    font-size: 46px;
+  }

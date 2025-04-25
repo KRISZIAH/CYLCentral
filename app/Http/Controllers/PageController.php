@@ -30,6 +30,10 @@ class PageController extends Controller
      return view('main.membershippage'); 
     }
 
+    public function membership_reg()
+    {
+     return view('main.membership_registration'); 
+    }
 
     // public function contact()
     // {
@@ -64,4 +68,5 @@ class PageController extends Controller
     // }
 
     
+
 }

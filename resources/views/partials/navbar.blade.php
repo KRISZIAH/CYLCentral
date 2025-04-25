@@ -39,46 +39,54 @@
             </ul>
 
             <!-- Right Side - Auth Links -->
-            <!-- Right Side - Auth Links -->
-<ul class="navbar-nav ms-auto">
-    @guest
-        @if (Route::has('login'))
-            <li class="nav-item">
-                <a class="nav-link login-btn" href="{{ route('login') }}">LOG IN</a>
-            </li>
-        @endif
+            <ul class="navbar-nav ms-auto">
+                @guest
+                    @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link login-btn" href="{{ route('login') }}">LOG IN</a>
+                        </li>
+                    @endif
 
-        @if (Route::has('register'))
-            <li class="nav-item">
-                <a class="btn signup-btn ms-2" href="{{ route('register') }}">SIGN UP</a>
-            </li>
-        @endif
-    @else
-        <!-- User Dropdown -->
-        <li class="nav-item dropdown">
-            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                <i class="fas fa-user-circle me-1"></i> {{ Auth::user()->first_name }}
-            </a>
+                    @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="btn signup-btn ms-2" href="{{ route('register') }}">SIGN UP</a>
+                        </li>
+                    @endif
+                @else
+                    <!-- Notification Bell -->
+                    <li class="nav-item dropdown me-2">
+                    <a class="nav-link position-relative" href="{{ route('announcements_user') }}">
+                        <i class="fas fa-bell"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                    </a>
+                        <!-- Notification dropdown menu would go here if needed -->
+                    </li>
+                    
+                    <!-- Profile Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle me-1"></i> {{ Auth::user()->first_name }}
+                        </a>
 
-            <div class="dropdown-menu dropdown-menu-end">
-                <a class="dropdown-item" href="{{ route('editprofile') }}">
-                    <i class="fas fa-user-edit me-2"></i> Edit Profile
-                </a>
-                <a class="dropdown-item" href="{{ route('files') }}">
-                    <i class="fas fa-folder me-2"></i> Files
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{ route('logout') }}"
-                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <i class="fas fa-sign-out-alt me-2"></i> Logout
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
-            </div>
-        </li>
-    @endguest
-</ul>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <a class="dropdown-item" href="{{ route('editprofile') }}">
+                                <i class="fas fa-user-edit me-2"></i> Edit Profile
+                            </a>
+                            <a class="dropdown-item" href="{{ route('files') }}">
+                                <i class="fas fa-folder me-2"></i> Files
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="fas fa-sign-out-alt me-2"></i> Logout
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>   
+                @endguest
+            </ul>
         </div> <!-- End of Navbar Content -->
     </div>
 </nav>

@@ -92,7 +92,7 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Membership Requirement</h2>
+        <h2 style="font-size: 24px;">Membership Requirement</h2>
         <p>Choose Your Membership</p>
       </div><!-- End Section Title -->
 
@@ -195,7 +195,7 @@
 
       <div class="apply-section">
         <div class="container section-title" data-aos="fade-up">
-          <h2>How to Apply</h2>
+          <h2 style="font-size: 24px;">How to Apply</h2>
           <p class="sub"> Follow these simple steps in becoming a member!</p>
 
 
@@ -235,8 +235,7 @@
                       <p>Receive your CYLC ID and Certificate of Membership.</p>
                   </div>
               </div>
- 
-              <button class="apply-btn mt-4">CLICK HERE TO APPLY</button>
+                <a href="{{ route('membership_reg') }}" class="apply-btn btn-sm">CLICK HERE TO APPLY</a>
           </div>
       </div>
     </div>
