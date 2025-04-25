@@ -5,13 +5,16 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AnnouncementController;
 
 // Public Routes
 Route::get('/home', [PageController::class, 'home'])->name('home');
 Route::get('/about', [PageController::class, 'aboutpage'])->name('about');
 Route::get('/events', [PageController::class, 'eventcatalog'])->name('events');
 Route::get('/membership', [PageController::class, 'membershippage'])->name('membership'); 
+Route::get('/membership_reg', [PageController::class, 'membership_reg'])->name('membership_reg'); 
 Route::get('/pages', [PageController::class, 'eventpages'])->name('pages'); 
+
 
 //Temporary routes (For Admin Side)
 // Route::get('/kpi', [PageController::class, 'dashboard_analytics'])->name('kpi');
@@ -67,4 +70,6 @@ Route::get('/announcements', function () {
 //users
 Route::get('/users', [UserController::class, 'dashboard_users'])->name('users');
 
+
+Route::get('/announcements_user', [AnnouncementController::class, 'announcement_user'])->name('announcements_user');
 
