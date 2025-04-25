@@ -11,6 +11,7 @@ Route::get('/home', [PageController::class, 'home'])->name('home');
 Route::get('/events', [PageController::class, 'eventcatalog'])->name('events');
 Route::get('/membership', [PageController::class, 'membershippage'])->name('membership'); 
 Route::get('/pages', [PageController::class, 'eventpages'])->name('pages'); 
+Route::get('/eventregis', [PageController::class, 'eventregis'])->name('eventregis');
 
 //Temporary routes (For Admin Side)
 Route::get('/kpi', [PageController::class, 'dashboard_analytics'])->name('kpi');

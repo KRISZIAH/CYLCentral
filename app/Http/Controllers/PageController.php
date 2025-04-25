@@ -53,6 +53,11 @@ class PageController extends Controller
         return view('main.eventpages');
     }
 
+    public function eventregis()
+    {
+        return view('main.eventregis');
+    }
+
     //For Admins
     public function dashboard_analytics()
     {
