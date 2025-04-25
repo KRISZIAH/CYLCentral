@@ -65,7 +65,7 @@
         </li>
         <!-- Announcements -->
         <li class="nav-item">
-            <a href="{{ route('announcements') }}" class="nav-link d-flex align-items-center px-2 py-1 {{ request()->routeIs('announcements') ? 'active' : '' }}" style="height:33px; width:210px; border-radius:8px; font-size:16px; font-weight:400; background: {{ request()->routeIs('announcements') ? 'var(--gradient-green)' : 'rgba(228,241,234,0.5)' }}; padding: 0 16px; margin-bottom: 6px;">
+            <a href="{{ route('db_announcement') }}" class="nav-link d-flex align-items-center px-2 py-1 {{ request()->routeIs('db_announcement') ? 'active' : '' }}" style="height:33px; width:210px; border-radius:8px; font-size:16px; font-weight:400; background: {{ request()->routeIs('db_announcement') ? 'var(--gradient-green)' : 'rgba(228,241,234,0.5)' }}; padding: 0 16px; margin-bottom: 6px;">
                 <i class="bi bi-megaphone me-2" style="font-size:18px;"></i> Announcements
             </a>
         </li>

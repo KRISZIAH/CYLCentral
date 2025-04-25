@@ -9,6 +9,18 @@ Route::get('/db_draftprog', function () {
 Route::get('/db_programs', function () {
     return view('admin.db_programs');
 })->name('db_programs');
+
+Route::get('/db_announcement', function () {
+    return view('admin.db_announcement');
+})->name('db_announcement');
+
+Route::get('/db_users', function () {
+    return view('admin.db_users');
+})->name('db_users');
+
+Route::get('/db_membership', function () {
+    return view('admin.db_membership');
+})->name('db_membership');
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\PageController;

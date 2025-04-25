@@ -62,6 +62,9 @@ export default defineConfig({
                 // Blade views for Vite hot reload
                 'resources/views/admin/db_programs.blade.php',
                 'resources/views/admin/db_draftprog.blade.php',
+                'resources/views/admin/db_announcement.blade.php',
+                'resources/views/admin/db_users.blade.php',
+                'resources/views/admin/db_membership.blade.php',
                 
                 // Commented files for reference
                 // 'resources/css/announcement_tab.css',

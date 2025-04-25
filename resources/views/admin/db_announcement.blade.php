@@ -1,42 +1,39 @@
 @extends('layouts.adminside')
 
 @section('content')
-@include('admin.db_navbar', ['section' => 'Users'])
+@include('admin.db_navbar', ['section' => 'Announcement'])
 <div class="container-fluid programs-section py-4" style="background: var(--mint); min-height: 100vh;">
     <div class="row justify-content-center">
         <div class="col-lg-11">
-            <div class="d-flex align-items-center mb-3 justify-content-between">
-                <div class="d-flex align-items-center" style="gap: 0.5rem;">
-                    <div class="btn-group user-tab-group" role="group" aria-label="User Tabs" style="border-radius: 12px; overflow: hidden; border: 2px solid #0b3d2d;">
-                        <button type="button" class="btn user-tab-btn active" style="background: #0b3d2d; color: #fff; font-weight: 500; font-size: 17px; padding: 12px 34px; border: none; border-radius: 12px 0 0 12px;">Users</button>
-                        <a href="{{ route('db_membership') }}" class="btn user-tab-btn" style="background: #eaf6f2; color: #0b3d2d; font-weight: 500; font-size: 17px; padding: 12px 34px; border: none; border-radius: 0 12px 12px 0; text-decoration: none;">Pending Member Applicants</a>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center" style="gap: 1rem;">
-                    <button type="button" class="extbtn me-2" style="background: #c26b5a; color: white; border-radius: 8px; font-size: 16px; font-weight: 500; border: none; padding: 10px 30px;"><i class="bi bi-file-earmark-excel"></i> Export to Excel</button>
-                    <button type="button" class="addbtn" style="background: transparent; color: #c26b5a; border: 2px solid #c26b5a; border-radius: 8px; font-size: 16px; font-weight: 500; padding: 10px 30px;"><i class="bi bi-plus-circle"></i> Add New User</button>
+            <div class="d-flex align-items-center mb-3">
+                <span style="font-size:20px; font-weight:600; color: var(--green1);">Create Announcement</span>
+                <div class="ms-auto d-flex">
+                    <a href="{{ route('db_draftprog') }}" class="me-3 px-4 py-2" style="background: transparent; color: var(--brown); border: 1.5px solid var(--brown); border-radius: 8px; font-size: 16px; font-weight: 500; text-decoration: none; display: inline-block;">Drafts</a>
+                    <a href="{{ route('db_newprogram') }}" class="px-4 py-2" style="background: var(--gradient-brown); color: white; border-radius: 8px; font-size: 16px; font-weight: 500; border: none; text-decoration: none; display: inline-block;">Add New</a>
                 </div>
             </div>
             <div class="rounded shadow-sm p-0" style="background: white;">
                 <div class="d-flex align-items-center justify-content-between px-4" style="background: var(--gradient-green); border-radius: 12px 12px 0 0; height:53px;">
-                    <span style="font-size: 18px; font-weight: 600; color: white;">Program List</span>
+                    <span style="font-size: 18px; font-weight: 600; color: white;">Announcement List</span>
                     <button class="d-flex align-items-center" style="background: transparent; border: none; color: white; border-radius: 8px; font-size: 15px; font-weight: 500;">
                         <i class="bi bi-funnel-fill me-2" style="color: white;"></i> Filter by
                     </button>
                 </div>
                 <div class="table-responsive" style="overflow-x: auto; min-width: 100%;">
-                    <table class="table align-middle mb-0 program-table" style="border-radius: 0 0 12px 12px; overflow: hidden; width: 100%; border-bottom: none;">
+                    <table class="table align-middle mb-0 program-table" style="border-radius: 0 0 12px 12px; overflow: hidden; width: 100%; border-bottom: none; padding: 0 24px 18px 24px;">
                         <style>
-                            .program-table th {
-                                text-align: left;
-                                vertical-align: middle;
-                                padding: 14px 20px;
-                                word-break: break-word;
-                                background: #fff;
-                                font-size: 16px;
-                                font-weight: 600;
-                                position: relative;
-                            }
+                            .program-table th, .program-table td {
+    padding: 14px 20px;
+}
+.program-table th {
+    text-align: left;
+    vertical-align: middle;
+    word-break: break-word;
+    background: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+}
                             .gradient-green-text {
                                 background: var(--gradient-green);
                                 -webkit-background-clip: text;
@@ -45,19 +42,29 @@
                                 color: transparent;
                             }
                             .program-table th:not(:last-child),
-                            .program-table td:not(:last-child) {
-                                border-right: 1px solid rgba(0,61,43,0.15);
-                            }
-                            /* Center-align all columns except Description (4th) */
-                            .program-table th:not(:nth-child(4)),
-                            .program-table td:not(:nth-child(4)) {
-                                text-align: center;
-                            }
-                            /* Keep Description left-aligned */
-                            .program-table th:nth-child(4),
-                            .program-table td:nth-child(4) {
-                                text-align: left;
-                            }
+.program-table td:not(:last-child) {
+    border-right: 1px solid rgba(0,61,43,0.15);
+}
+/* Center-align all columns except Title (1st) and Announcement (2nd) columns */
+.program-table th:not(:nth-child(1)):not(:nth-child(2)),
+.program-table td:not(:nth-child(1)):not(:nth-child(2)) {
+    text-align: center;
+}
+/* Make Title and Announcement columns left-aligned */
+.program-table th:nth-child(1),
+.program-table td:nth-child(1),
+.program-table th:nth-child(2),
+.program-table td:nth-child(2) {
+    text-align: left;
+}
+/* Make Announcement column wider */
+.program-table th:nth-child(2),
+.program-table td:nth-child(2) {
+    min-width: 320px;
+    width: 32vw;
+    max-width: 600px;
+    word-break: break-word;
+}
                             .program-table thead tr:first-child th {
                                 border-bottom: 2px solid var(--gradient-green);
                             }
@@ -137,52 +144,21 @@
                             }
                         </style>
                         <thead>
-                            <tr>
-                                <th class="gradient-green-text">Program ID</th>
-                                <th class="gradient-green-text">Logo</th>
-                                <th class="gradient-green-text">Program Name</th>
-                                <th class="gradient-green-text">Description</th>
-                                <th class="gradient-green-text">Program Type</th>
-                                <th class="gradient-green-text">Date Created</th>
-                                <th class="gradient-green-text">Director</th>
-                                <th class="gradient-green-text">Total Events</th>
-                                <th class="gradient-green-text">Action</th>
-                            </tr>
-                            <tr>
-                                <th colspan="9" style="padding: 0;"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>P0001</td>
-                                <td><img src="/img/programs/adal_kordilyera.png" alt="Adal Kordilyera" style="height:40px; max-width: none;"></td>
-                                <td>Adal Kordilyera</td>
-                                <td>Adal Kordilyera is digital information-sharing...</td>
-                                <td>Skills Development Webinars</td>
-                                <td>12-01-2024</td>
-                                <td>Jessica Bilat</td>
-                                <td>20</td>
-                                <td>
-                                    <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
-                                    <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>P0002</td>
-                                <td><img src="/img/programs/kordi_arts.png" alt="Kordi Arts" style="height:40px; max-width: none;"></td>
-                                <td>Kordi Arts</td>
-                                <td>KordiArts is an art-based initiative that promotes...</td>
-                                <td>Art Workshops</td>
-                                <td>12-01-2024</td>
-                                <td>Jessica Bilat</td>
-                                <td>20</td>
-                                <td>
-                                    <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
-                                    <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
-                                </td>
-                            </tr>
-                            <!-- Additional rows can be added here -->
-                        </tbody>
+    <tr>
+        <th class="gradient-green-text">Title</th>
+        <th class="gradient-green-text">Announcement</th>
+        <th class="gradient-green-text text-center">Recipient</th>
+        <th class="gradient-green-text text-center">Created At</th>
+        <th class="gradient-green-text text-center">Status</th>
+        <th class="gradient-green-text text-center">Action</th>
+    </tr>
+    <tr>
+        <th colspan="6" style="padding: 0; height: 2px; background: var(--gradient-green);"></th>
+    </tr>
+</thead>
+<tbody>
+    <!-- Table rows will be rendered by JS -->
+</tbody>
                     </table>
                 </div>
             </div>
@@ -221,24 +197,28 @@
         let visiblePages = 2; // Number of page numbers visible at once
         
         // Sample data for demonstration
-        const pages = {
-            1: [
-                { id: 'P0001', name: 'Adal Kordilyera', desc: 'Adal Kordilyera is digital information-sharing...', type: 'Skills Development Webinars' },
-                { id: 'P0002', name: 'Kordi Arts', desc: 'KordiArts is an art-based initiative that promotes...', type: 'Art Workshops' }
-            ],
-            2: [
-                { id: 'P0003', name: 'Siribs', desc: 'Siribs is a cultural preservation program...', type: 'Cultural Preservation' },
-                { id: 'P0004', name: 'Hope Project', desc: 'Hope Project focuses on community development...', type: 'Community Development' }
-            ],
-            3: [
-                { id: 'P0005', name: 'Dalluyon', desc: 'Dalluyon is an environmental awareness initiative...', type: 'Environmental Awareness' },
-                { id: 'P0006', name: '10KOK', desc: '10KOK is a youth leadership program...', type: 'Youth Leadership' }
-            ],
-            4: [
-                { id: 'P0007', name: 'Pansigedan', desc: 'Pansigedan focuses on indigenous knowledge...', type: 'Indigenous Knowledge' },
-                { id: 'P0008', name: 'Sumya', desc: 'Sumya is a mental health awareness program...', type: 'Mental Health' }
-            ]
-        };
+const pages = {
+    1: [
+        { title: 'Calling for Event Volunteers!', announcement: 'We are looking for dedicated volunteers...', recipient: 'Members', createdAt: '12-05-2024', status: 'Published' },
+        { title: 'Calling for Event Volunteers!', announcement: 'We are looking for dedicated volunteers...', recipient: 'Members', createdAt: '12-05-2024', status: 'Published' },
+        { title: 'Calling for Event Volunteers!', announcement: 'We are looking for dedicated volunteers...', recipient: 'Members', createdAt: '12-05-2024', status: 'Published' }
+    ],
+    2: [
+        { title: 'Calling for Event Volunteers!', announcement: 'We are looking for dedicated volunteers...', recipient: 'Members', createdAt: '12-05-2024', status: 'Pending' },
+        { title: 'Calling for Event Volunteers!', announcement: 'We are looking for dedicated volunteers...', recipient: 'Members', createdAt: '12-05-2024', status: 'Pending' },
+        { title: 'Calling for Event Volunteers!', announcement: 'We are looking for dedicated volunteers...', recipient: 'Members', createdAt: '12-05-2024', status: 'Pending' }
+    ],
+    3: [
+        { title: 'Calling for Event Volunteers!', announcement: 'We are looking for dedicated volunteers...', recipient: 'Members', createdAt: '12-05-2024', status: 'Published' },
+        { title: 'Calling for Event Volunteers!', announcement: 'We are looking for dedicated volunteers...', recipient: 'Members', createdAt: '12-05-2024', status: 'Pending' },
+        { title: 'Calling for Event Volunteers!', announcement: 'We are looking for dedicated volunteers...', recipient: 'Members', createdAt: '12-05-2024', status: 'Published' }
+    ],
+    4: [
+        { title: 'Calling for Event Volunteers!', announcement: 'We are looking for dedicated volunteers...', recipient: 'Members', createdAt: '12-05-2024', status: 'Published' },
+        { title: 'Calling for Event Volunteers!', announcement: 'We are looking for dedicated volunteers...', recipient: 'Members', createdAt: '12-05-2024', status: 'Pending' },
+        { title: 'Calling for Event Volunteers!', announcement: 'We are looking for dedicated volunteers...', recipient: 'Members', createdAt: '12-05-2024', status: 'Published' }
+    ]
+};
         
         // Update pagination UI based on current page
         function updatePagination() {
@@ -291,24 +271,25 @@
             tbody.innerHTML = '';
             
             // Add new rows for current page
-            pageData.forEach(item => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${item.id}</td>
-                    <td><img src="/img/programs/${item.name.toLowerCase().replace(' ', '_')}.png" alt="${item.name}" style="height:40px; max-width: 130px;"></td>
-                    <td>${item.name}</td>
-                    <td>${item.desc}</td>
-                    <td>${item.type}</td>
-                    <td>12-01-2024</td>
-                    <td>Jessica Bilat</td>
-                    <td>20</td>
-                    <td>
-                        <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
-                        <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
-                    </td>
-                `;
-                tbody.appendChild(row);
-            });
+    pageData.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${item.title}</td>
+            <td>${item.announcement}</td>
+            <td class="text-center">${item.recipient}</td>
+            <td class="text-center">${item.createdAt}</td>
+            <td class="text-center">
+                <span style="color: ${item.status === 'Published' ? '#1bc47d' : '#eb3d3d'}; font-weight: 600;">${item.status}</span>
+            </td>
+            <td class="text-center">
+                <div class="d-flex justify-content-center align-items-center gap-2">
+                    <a href="#" class="action-icon me-2" title="Edit" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
+                    <a href="#" class="action-icon" title="Delete" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
+                </div>
+            </td>
+        `;
+        tbody.appendChild(row);
+    });
         }
         
         // Add click event listeners to pagination links
