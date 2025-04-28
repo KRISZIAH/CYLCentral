@@ -18,6 +18,10 @@ class RegisterController
 
     public function register(Request $request)
 {
+    // Combine first_name and last_name into name for validation compatibility
+    $request->merge([
+        'name' => trim(($request->first_name ?? '') . ' ' . ($request->last_name ?? ''))
+    ]);
     $messages = [
         'first_name.required' => 'Please enter your first name.',
         'last_name.required' => 'Please enter your last name.',

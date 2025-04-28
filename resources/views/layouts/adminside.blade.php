@@ -127,8 +127,8 @@
             }
             
             // Event listeners
-            sidebarToggle.addEventListener('click', toggleSidebar);
-            sidebarOverlay.addEventListener('click', toggleSidebar);
+            if (sidebarToggle) sidebarToggle.addEventListener('click', toggleSidebar);
+            if (sidebarOverlay) sidebarOverlay.addEventListener('click', toggleSidebar);
             
             // Close sidebar when a nav link is clicked (mobile)
             document.querySelectorAll('.admin-sidebar .nav-link').forEach(link => {

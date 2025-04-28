@@ -12,14 +12,13 @@
                         height: 46px;
                         border-radius: 10px;
                         overflow: hidden;
-                        /* border removed for seamless tab effect */
                     }
                     .user-tab-btn {
                         height: 46px;
                         font-size: 16px;
                         font-weight: 400;
                         padding: 0 34px;
-                        border: 2px solid #0b3d2d;
+                        border: none;
                         box-sizing: border-box;
                         background: #eaf6f2;
                         color: #0b3d2d;
@@ -91,293 +90,318 @@
                         justify-content: center;
                     }
                     .extbtn:hover, .extbtn:focus {
-                        background: #f8f1ee;
-                        color: #a04e37;
+                        background: var(--gradient-brown);
+                        color: #fff;
                         border-color: #a04e37;
+                    }
+                    .search-bar-container {
+                        background: rgba(var(--green1-rgb, 0, 128, 96), 1);
+                        border-radius: 12px;
+                        width: 216px;
+                        height: 35px;
+                    }
+                    .search-bar-input::placeholder {
+                        color: white;
+                        opacity: 1;
+                    }
+                    .search-bar-input {
+                        background: transparent;
+                        border: none;
+                        outline: none;
+                        color: white;
+                        font-size: 15px;
+                        width: 170px;
+                        height: 100%;
+                        min-height: 0;
+                    }
+                    .role-member { 
+                        color: #00A825; 
+                        font-weight: 600; 
+                        text-align: center;
+                    }
+                    .role-director { 
+                        color: #0066CC; 
+                        font-weight: 600; 
+                        text-align: center;
+                    }
+                    .role-admin { 
+                        color: #E00000; 
+                        font-weight: 600; 
+                        text-align: center;
+                    }
+                    .role-participant { 
+                        color: #FF9900; 
+                        font-weight: 600; 
+                        text-align: center;
+                    }
+                    .profile-link {
+                        color: #c26b5a;
+                        text-decoration: none;
+                        font-weight: 500;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .profile-link:hover {
+                        color: #a04e37;
+                        text-decoration: underline;
+                    }
+                    .action-icon {
+                        color: var(--green1);
+                        font-size: 18px;
+                        cursor: pointer;
+                        margin: 0 5px;
+                    }
+                    .action-icon.delete {
+                        color: #E00000;
+                    }
+                    /* Table styling */
+                    .table {
+                        border-bottom: none !important;
+                        margin-bottom: 0 !important;
+                    }
+                    .table>:not(caption)>*>* {
+                        border-bottom-width: 0;
+                        text-align: center;
+                        vertical-align: middle;
+                        padding: 12px;
+                    }
+                    .table>tbody {
+                        border-bottom: none !important;
+                    }
+                    .table th {
+                        color: #0b3d2d;
+                        font-weight: 600;
+                        padding: 14px 12px;
+                        text-align: center;
+                    }
+                    .table td {
+                        border-right: 1px solid rgba(0,61,43,0.15);
+                    }
+                    .table th {
+                        border-right: 1px solid rgba(0,61,43,0.15);
+                    }
+                    .table td:last-child, .table th:last-child {
+                        border-right: none;
+                    }
+                    .gradient-green-text {
+                        background: var(--gradient-green);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        color: transparent;
+                        text-align: center;
+                        font-weight: 600;
+                    }
+                    .table tbody tr {
+                        border-bottom: 1px solid rgba(0,61,43,0.1);
+                    }
+                    .table tbody tr:last-child {
+                        border-bottom: none;
+                    }
+                    /* Column widths */
+                    .col-select { width: 50px; }
+                    .col-user-id { width: 80px; }
+                    .col-profile { width: 100px; }
+                    .col-name { width: 120px; }
+                    .col-email { width: 180px; }
+                    .col-contact { width: 150px; }
+                    .col-date { width: 120px; }
+                    .col-role { width: 100px; }
+                    .col-action { width: 100px; }
+                    /* Custom Pagination Styling */
+                    .pagination-container {
+                        margin-top: 1rem;
+                    }
+                    .custom-pagination {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                    .pagination-arrow {
+                        color: var(--green1);
+                        font-size: 18px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-decoration: none;
+                    }
+                    .pagination-arrow i {
+                        font-weight: bold;
+                        font-size: 22px;
+                    }
+                    .pagination-arrow.opacity-50 {
+                        opacity: 0.5;
+                    }
+                    .pagination-number {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 8px;
+                        color: var(--green1);
+                        text-decoration: none;
+                        font-weight: 500;
+                    }
+                    .pagination-number.active {
+                        background-color: var(--green1);
+                        color: white;
+                    }
+                    /* Custom checkbox styling */
+                    input[type="checkbox"] {
+                      appearance: none;
+                      -webkit-appearance: none;
+                      width: 18px;
+                      height: 18px;
+                      border: 2px solid rgba(0, 61, 43, 0.4);
+                      border-radius: 4px;
+                      margin: 0;
+                      cursor: pointer;
+                      position: relative;
+                      transition: all 0.2s ease;
+                      background-color: white;
+                    }
+                    input[type="checkbox"]:checked {
+                      background-color: var(--green1);
+                      border-color: var(--green1);
+                    }
+                    input[type="checkbox"]:checked::after {
+                      content: '✓';
+                      position: absolute;
+                      color: white;
+                      font-size: 14px;
+                      top: 50%;
+                      left: 50%;
+                      transform: translate(-50%, -50%);
+                      line-height: 1;
+                    }
+                    input[type="checkbox"]:focus {
+                      outline: none;
+                      box-shadow: 0 0 0 2px rgba(0, 128, 96, 0.25);
+                    }
+                    /* Custom Scrollbar Styling */
+                    ::-webkit-scrollbar {
+                        height: 6px;
+                        background: transparent;
+                    }
+                    ::-webkit-scrollbar-thumb {
+                        background: var(--gradient-green);
+                        border-radius: 6px;
+                    }
+                    ::-webkit-scrollbar-track {
+                        background: transparent;
                     }
                 </style>
                 <div class="d-flex align-items-center" style="gap: 0.5rem;">
                     <div class="btn-group user-tab-group align-items-center" role="group" aria-label="User Tabs">
                         <button type="button" class="btn user-tab-btn active">Users</button>
-                        <a href="{{ route('db_membership') }}" class="btn user-tab-btn" style="border: 0px;">Pending Member Applicants</a>
+                        <a href="{{ route('db_membership') }}" class="btn user-tab-btn">Pending Member Applicants</a>
                     </div>
                 </div>
                 <div class="d-flex align-items-center" style="gap: 0.4rem;">
-                    <button type="button" class="extbtn me-2"><i class="bi bi-file-earmark-excel"></i> Export to Excel</button>
-                    <button type="button" class="addbtn"><i class="bi bi-plus-circle me-2"></i>Add New User</button>
+                    <button type="button" class="extbtn me-2"><i class="bi bi-download me-2"></i>Export Users</button>
+                    <button type="button" class="addbtn"><i class="bi bi-plus-lg me-2"></i>Add User</button>
                 </div>
             </div>
             <div class="rounded shadow-sm p-0" style="background: white;">
                 <div class="d-flex align-items-center justify-content-between px-4" style="background: var(--gradient-green); border-radius: 12px 12px 0 0; height:53px;">
-                    <span style="font-size: 18px; font-weight: 600; color: white;">User Management</span>
-                    <button class="d-flex align-items-center" style="background: transparent; border: none; color: white; border-radius: 8px; font-size: 15px; font-weight: 500;">
-                        <i class="bi bi-funnel-fill me-2" style="color: white;"></i> Filter by
-                    </button>
+                    <span style="font-size: 18px; font-weight: 600; color: white;">User List</span>
+                    <div class="search-bar-container d-flex align-items-center">
+                        <i class="bi bi-search ms-2" style="color: white; font-size: 18px;"></i>
+                        <input type="text" class="search-bar-input ms-2" placeholder="Search" style="padding-left: 8px; padding-right: 8px;">
+                    </div>
                 </div>
-                <div class="table-responsive" style="overflow-x: auto; min-width: 100%;">
-                    <table class="table align-middle mb-0 program-table" style="border-radius: 0 0 12px 12px; overflow: hidden; width: 100%; border-bottom: none;">
-                        <style>
-                            .program-table th {
-                                text-align: left;
-                                vertical-align: middle;
-                                padding: 14px 20px;
-                                word-break: break-word;
-                                background: #fff;
-                                font-size: 16px;
-                                font-weight: 600;
-                                position: relative;
-                            }
-                            .gradient-green-text {
-                                background: var(--gradient-green);
-                                -webkit-background-clip: text;
-                                -webkit-text-fill-color: transparent;
-                                background-clip: text;
-                                color: transparent;
-                            }
-                            .program-table th:not(:last-child),
-                            .program-table td:not(:last-child) {
-                                border-right: 1px solid rgba(0,61,43,0.15);
-                            }
-                            /* Center-align all columns except Description (4th) */
-                            .program-table th:not(:nth-child(4)),
-                            .program-table td:not(:nth-child(4)) {
-                                text-align: center;
-                            }
-                            /* Keep Description left-aligned */
-                            .program-table th:nth-child(4),
-                            .program-table td:nth-child(4) {
-                                text-align: left;
-                            }
-                            .program-table thead tr:first-child th {
-                                border-bottom: 2px solid var(--gradient-green);
-                            }
-                            .program-table tbody tr {
-                                border-bottom: 1px solid rgba(0,61,43,0.1);
-                            }
-                            .program-table tbody tr:last-child {
-                                border-bottom: none;
-                            }
-                            
-                            /* Remove bottom border/grid */
-                            .table {
-                                border-bottom: none !important;
-                                margin-bottom: 0 !important;
-                            }
-                            
-                            /* Additional fixes for bottom grid */
-                            .table>:not(caption)>*>* {
-                                border-bottom-width: 0;
-                            }
-                            
-                            .table>tbody {
-                                border-bottom: none !important;
-                            }
-                            
-                            /* Set max-width for logo column */
-                            .program-table th:nth-child(2),
-                            .program-table td:nth-child(2) {
-                                max-width: 150px;
-                                width: 150px;
-                            }
-                            
-                            /* Custom Pagination Styling */
-                            .pagination-container {
-                                margin-top: 1rem;
-                            }
-                            
-                            .custom-pagination {
-                                display: flex;
-                                align-items: center;
-                                gap: 10px;
-                            }
-                            
-                            .pagination-arrow {
-                                color: var(--green1);
-                                font-size: 18px;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                text-decoration: none;
-                            }
-                            
-                            .pagination-arrow i {
-                                font-weight: bold;
-                                font-size: 22px;
-                            }
-                            
-                            .pagination-arrow.opacity-50 {
-                                opacity: 0.5;
-                            }
-                            
-                            .pagination-number {
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                width: 30px;
-                                height: 30px;
-                                border-radius: 8px;
-                                color: var(--green1);
-                                text-decoration: none;
-                                font-weight: 500;
-                            }
-                            
-                            .pagination-number.active {
-                                background-color: var(--green1);
-                                color: white;
-                            }
-                        </style>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0" id="users-table">
                         <thead>
                             <tr>
-                                <th class="gradient-green-text">User ID</th>
-                                <th class="gradient-green-text">Profile</th>
-                                <th class="gradient-green-text">First Name</th>
-                                <th class="gradient-green-text">Last Name</th>
-                                <th class="gradient-green-text">Email</th>
-                                <th class="gradient-green-text">Contact Number</th>
-                                <th class="gradient-green-text">Date Created</th>
-                                <th class="gradient-green-text">Role</th>
-                                <th class="gradient-green-text">Action</th>
+                                <th scope="col" class="gradient-green-text col-select"><input type="checkbox" id="select-all"></th>
+                                <th scope="col" class="gradient-green-text col-user-id">User ID</th>
+                                <th scope="col" class="gradient-green-text col-profile">Profile</th>
+                                <th scope="col" class="gradient-green-text col-name">First Name</th>
+                                <th scope="col" class="gradient-green-text col-name">Last Name</th>
+                                <th scope="col" class="gradient-green-text col-email">Email</th>
+                                <th scope="col" class="gradient-green-text col-contact">Contact Number</th>
+                                <th scope="col" class="gradient-green-text col-date">Date Created</th>
+                                <th scope="col" class="gradient-green-text col-role">Role</th>
+                                <th scope="col" class="gradient-green-text col-action">Action</th>
                             </tr>
                             <tr>
-                                <th colspan="9" style="padding: 0;"></th>
+                                <th colspan="10" style="padding: 0; height: 2px; background: var(--gradient-green); border: none;"></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
+                                <td><input type="checkbox" class="row-check"></td>
                                 <td>0001</td>
-                                <td><img src="/img/profiles/default.png" alt="User Profile" style="height:40px; max-width: none;"></td>
+                                <td><img src="{{ asset('img/placeholder-profile.jpg') }}" alt="User Profile" class="rounded-circle" width="40" height="40"></td>
                                 <td>Juan</td>
                                 <td>Dela Cruz</td>
                                 <td>juandc@gmail.com</td>
                                 <td>+639123456789</td>
                                 <td>12-01-2024</td>
-                                <td>Member</td>
+                                <td class="role-member">Member</td>
                                 <td>
                                     <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
                                     <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
                                 </td>
                             </tr>
                             <tr>
+                                <td><input type="checkbox" class="row-check"></td>
                                 <td>0002</td>
-                                <td><img src="/img/profiles/default.png" alt="User Profile" style="height:40px; max-width: none;"></td>
+                                <td><img src="{{ asset('img/placeholder-profile.jpg') }}" alt="User Profile" class="rounded-circle" width="40" height="40"></td>
                                 <td>Maria</td>
                                 <td>Santos</td>
                                 <td>juandc@gmail.com</td>
                                 <td>+639123456789</td>
                                 <td>12-03-2024</td>
-                                <td>Member</td>
+                                <td class="role-member">Member</td>
                                 <td>
                                     <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
                                     <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
                                 </td>
                             </tr>
                             <tr>
+                                <td><input type="checkbox" class="row-check"></td>
                                 <td>0003</td>
-                                <td><img src="/img/profiles/default.png" alt="User Profile" style="height:40px; max-width: none;"></td>
+                                <td><img src="{{ asset('img/placeholder-profile.jpg') }}" alt="User Profile" class="rounded-circle" width="40" height="40"></td>
                                 <td>Carlo</td>
                                 <td>Reyes</td>
                                 <td>juandc@gmail.com</td>
                                 <td>+639123456789</td>
                                 <td>12-05-2024</td>
-                                <td>Director</td>
+                                <td class="role-director">Director</td>
                                 <td>
                                     <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
                                     <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
                                 </td>
                             </tr>
                             <tr>
+                                <td><input type="checkbox" class="row-check"></td>
                                 <td>0004</td>
-                                <td><img src="/img/profiles/default.png" alt="User Profile" style="height:40px; max-width: none;"></td>
+                                <td><img src="{{ asset('img/placeholder-profile.jpg') }}" alt="User Profile" class="rounded-circle" width="40" height="40"></td>
                                 <td>Andrea</td>
                                 <td>Lopez</td>
                                 <td>juandc@gmail.com</td>
                                 <td>+639123456789</td>
                                 <td>12-07-2024</td>
-                                <td>Participant</td>
+                                <td class="role-participant">Participant</td>
                                 <td>
                                     <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
                                     <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
                                 </td>
                             </tr>
                             <tr>
+                                <td><input type="checkbox" class="row-check"></td>
                                 <td>0005</td>
-                                <td><img src="/img/profiles/default.png" alt="User Profile" style="height:40px; max-width: none;"></td>
+                                <td><img src="{{ asset('img/placeholder-profile.jpg') }}" alt="User Profile" class="rounded-circle" width="40" height="40"></td>
                                 <td>Jennifer</td>
                                 <td>Moltio</td>
                                 <td>juandc@gmail.com</td>
                                 <td>+639123456789</td>
                                 <td>12-08-2024</td>
-                                <td>Admin</td>
-                                <td>
-                                    <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
-                                    <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>0006</td>
-                                <td><img src="/img/profiles/default.png" alt="User Profile" style="height:40px; max-width: none;"></td>
-                                <td>Patricia</td>
-                                <td>Gomez</td>
-                                <td>juandc@gmail.com</td>
-                                <td>+639123456789</td>
-                                <td>12-10-2024</td>
-                                <td>Member</td>
-                                <td>
-                                    <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
-                                    <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>0007</td>
-                                <td><img src="/img/profiles/default.png" alt="User Profile" style="height:40px; max-width: none;"></td>
-                                <td>Richard</td>
-                                <td>Tan</td>
-                                <td>juandc@gmail.com</td>
-                                <td>+639123456789</td>
-                                <td>11-25-2024</td>
-                                <td>Participant</td>
-                                <td>
-                                    <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
-                                    <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>0008</td>
-                                <td><img src="/img/profiles/default.png" alt="User Profile" style="height:40px; max-width: none;"></td>
-                                <td>Tracy</td>
-                                <td>Wal</td>
-                                <td>juandc@gmail.com</td>
-                                <td>+639123456789</td>
-                                <td>11-23-2024</td>
-                                <td>Participant</td>
-                                <td>
-                                    <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
-                                    <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>0009</td>
-                                <td><img src="/img/profiles/default.png" alt="User Profile" style="height:40px; max-width: none;"></td>
-                                <td>Jaemil</td>
-                                <td>Javier</td>
-                                <td>juandc@gmail.com</td>
-                                <td>+639123456789</td>
-                                <td>11-23-2024</td>
-                                <td>Member</td>
-                                <td>
-                                    <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
-                                    <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>0010</td>
-                                <td><img src="/img/profiles/default.png" alt="User Profile" style="height:40px; max-width: none;"></td>
-                                <td>Jenny</td>
-                                <td>Cruz</td>
-                                <td>juandc@gmail.com</td>
-                                <td>+639123456789</td>
-                                <td>10-17-2024</td>
-                                <td>Director</td>
+                                <td class="role-admin">Admin</td>
                                 <td>
                                     <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
                                     <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
@@ -405,23 +429,30 @@
 
 @push('scripts')
 <script>
+    // Select All Checkbox Logic
     document.addEventListener('DOMContentLoaded', function() {
-        // Apply gradient text to headers
-        const headers = document.querySelectorAll('.program-table thead th.gradient-green-text');
-        headers.forEach(header => {
-            header.style.background = 'var(--gradient-green)';
-            header.style.webkitBackgroundClip = 'text';
-            header.style.webkitTextFillColor = 'transparent';
-            header.style.backgroundClip = 'text';
+        const selectAll = document.getElementById('select-all');
+        const rowChecks = document.querySelectorAll('.row-check');
+
+        function updateSelectAll() {
+            const allChecked = Array.from(rowChecks).every(cb => cb.checked);
+            selectAll.checked = allChecked;
+        }
+
+        selectAll.addEventListener('change', function() {
+            rowChecks.forEach(cb => cb.checked = selectAll.checked);
+        });
+        
+        rowChecks.forEach(cb => {
+            cb.addEventListener('change', updateSelectAll);
         });
         
         // Pagination functionality
         const paginationLinks = document.querySelectorAll('.pagination-number, .pagination-arrow');
-        const totalPages = 4; // Total number of pages available
+        const totalPages = 2; // Total number of pages available
         let currentPage = 1;
-        let visiblePages = 2; // Number of page numbers visible at once
         
-        // Sample data for demonstration
+        // Sample data for demonstration - could be replaced with dynamic data
         const pages = {
             1: [
                 { id: '0001', firstName: 'Juan', lastName: 'Dela Cruz', email: 'juandc@gmail.com', contact: '+639123456789', date: '12-01-2024', role: 'Member' },
@@ -431,44 +462,20 @@
                 { id: '0005', firstName: 'Jennifer', lastName: 'Moltio', email: 'juandc@gmail.com', contact: '+639123456789', date: '12-08-2024', role: 'Admin' }
             ],
             2: [
-                { id: '0006', firstName: 'Patricia', lastName: 'Gomez', email: 'juandc@gmail.com', contact: '+639123456789', date: '12-10-2024', role: 'Member' },
-                { id: '0007', firstName: 'Richard', lastName: 'Tan', email: 'juandc@gmail.com', contact: '+639123456789', date: '11-25-2024', role: 'Participant' },
-                { id: '0008', firstName: 'Tracy', lastName: 'Wal', email: 'juandc@gmail.com', contact: '+639123456789', date: '11-23-2024', role: 'Participant' },
-                { id: '0009', firstName: 'Jaemil', lastName: 'Javier', email: 'juandc@gmail.com', contact: '+639123456789', date: '11-23-2024', role: 'Member' },
-                { id: '0010', firstName: 'Jenny', lastName: 'Cruz', email: 'juandc@gmail.com', contact: '+639123456789', date: '10-17-2024', role: 'Director' }
-            ],
-            3: [
-                { id: '0011', firstName: 'David', lastName: 'Wong', email: 'juandc@gmail.com', contact: '+639123456789', date: '10-15-2024', role: 'Member' },
-                { id: '0012', firstName: 'Sofia', lastName: 'Garcia', email: 'juandc@gmail.com', contact: '+639123456789', date: '10-12-2024', role: 'Participant' },
-                { id: '0013', firstName: 'Miguel', lastName: 'Santos', email: 'juandc@gmail.com', contact: '+639123456789', date: '10-10-2024', role: 'Member' },
-                { id: '0014', firstName: 'Isabella', lastName: 'Reyes', email: 'juandc@gmail.com', contact: '+639123456789', date: '10-05-2024', role: 'Participant' },
-                { id: '0015', firstName: 'Antonio', lastName: 'Mendoza', email: 'juandc@gmail.com', contact: '+639123456789', date: '10-01-2024', role: 'Director' }
-            ],
-            4: [
-                { id: '0016', firstName: 'Elena', lastName: 'Lim', email: 'juandc@gmail.com', contact: '+639123456789', date: '09-28-2024', role: 'Member' },
-                { id: '0017', firstName: 'Rafael', lastName: 'Aquino', email: 'juandc@gmail.com', contact: '+639123456789', date: '09-20-2024', role: 'Member' },
-                { id: '0018', firstName: 'Carmen', lastName: 'Torres', email: 'juandc@gmail.com', contact: '+639123456789', date: '09-15-2024', role: 'Participant' },
-                { id: '0019', firstName: 'Francisco', lastName: 'Rivera', email: 'juandc@gmail.com', contact: '+639123456789', date: '09-10-2024', role: 'Admin' },
-                { id: '0020', firstName: 'Gabriela', lastName: 'Bautista', email: 'juandc@gmail.com', contact: '+639123456789', date: '09-05-2024', role: 'Member' }
+                { id: '0006', firstName: 'Patricia', lastName: 'Gomez', email: 'patricia@gmail.com', contact: '+639123456789', date: '12-10-2024', role: 'Member' },
+                { id: '0007', firstName: 'Richard', lastName: 'Tan', email: 'richard@gmail.com', contact: '+639123456789', date: '11-25-2024', role: 'Member' },
+                { id: '0008', firstName: 'Tracy', lastName: 'Wal', email: 'tracy@gmail.com', contact: '+639123456789', date: '11-23-2024', role: 'Director' },
+                { id: '0009', firstName: 'Jaemil', lastName: 'Javier', email: 'jaemil@gmail.com', contact: '+639123456789', date: '11-23-2024', role: 'Participant' },
+                { id: '0010', firstName: 'Jenny', lastName: 'Cruz', email: 'jenny@gmail.com', contact: '+639123456789', date: '10-17-2024', role: 'Admin' }
             ]
         };
         
         // Update pagination UI based on current page
         function updatePagination() {
-            // Get pagination number elements
-            const pageNumbers = document.querySelectorAll('.pagination-number');
-            
-            // Determine which page numbers to show
-            let startPage = Math.max(1, Math.min(currentPage, totalPages - visiblePages + 1));
-            
             // Update page numbers
-            pageNumbers.forEach((link, index) => {
-                const pageNum = startPage + index;
-                link.textContent = pageNum;
-                link.setAttribute('data-page', pageNum);
+            document.querySelectorAll('.pagination-number').forEach(link => {
                 link.classList.remove('active');
-                
-                if (pageNum === currentPage) {
+                if (parseInt(link.getAttribute('data-page')) === currentPage) {
                     link.classList.add('active');
                 }
             });
@@ -497,7 +504,7 @@
         
         // Update table content based on current page
         function updateTableContent() {
-            const tbody = document.querySelector('.program-table tbody');
+            const tbody = document.querySelector('#users-table tbody');
             const pageData = pages[currentPage] || [];
             
             // Clear existing rows
@@ -506,21 +513,54 @@
             // Add new rows for current page
             pageData.forEach(item => {
                 const row = document.createElement('tr');
+                let roleClass = '';
+                
+                // Set role class for styling
+                if (item.role === 'Member') roleClass = 'role-member';
+                else if (item.role === 'Director') roleClass = 'role-director';
+                else if (item.role === 'Admin') roleClass = 'role-admin';
+                else if (item.role === 'Participant') roleClass = 'role-participant';
+                
                 row.innerHTML = `
+                    <td><input type="checkbox" class="row-check"></td>
                     <td>${item.id}</td>
-                    <td><img src="/img/profiles/default.png" alt="User Profile" style="height:40px; max-width: none;"></td>
+                    <td><img src="{{ asset('img/placeholder-profile.jpg') }}" alt="User Profile" class="rounded-circle" width="40" height="40"></td>
                     <td>${item.firstName}</td>
                     <td>${item.lastName}</td>
                     <td>${item.email}</td>
                     <td>${item.contact}</td>
                     <td>${item.date}</td>
-                    <td>${item.role}</td>
+                    <td class="${roleClass}">${item.role}</td>
                     <td>
                         <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
                         <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
                     </td>
                 `;
                 tbody.appendChild(row);
+            });
+            
+            // Select-all checkbox logic
+            const selectAll = document.getElementById('select-all');
+            const rowCheckboxes = tbody.querySelectorAll('.row-check');
+            
+            // Remove previous event listeners
+            selectAll.onclick = null;
+            rowCheckboxes.forEach(cb => cb.onclick = null);
+            
+            // Select-all handler
+            selectAll.checked = false;
+            selectAll.addEventListener('change', function() {
+                rowCheckboxes.forEach(cb => {
+                    cb.checked = selectAll.checked;
+                });
+            });
+            
+            // Row checkbox handler
+            rowCheckboxes.forEach(cb => {
+                cb.addEventListener('change', function() {
+                    const allChecked = Array.from(rowCheckboxes).every(c => c.checked);
+                    selectAll.checked = allChecked;
+                });
             });
         }
         
