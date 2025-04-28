@@ -15,9 +15,44 @@
             <div class="rounded shadow-sm p-0" style="background: white;">
                 <div class="d-flex align-items-center justify-content-between px-4" style="background: var(--gradient-green); border-radius: 12px 12px 0 0; height:53px;">
                     <span style="font-size: 18px; font-weight: 600; color: white;">Announcement List</span>
-                    <button class="d-flex align-items-center" style="background: transparent; border: none; color: white; border-radius: 8px; font-size: 15px; font-weight: 500;">
-                        <i class="bi bi-funnel-fill me-2" style="color: white;"></i> Filter by
-                    </button>
+                    <div class="search-bar-container d-flex align-items-center" style="width: 216px; height: 35px; background: rgba(var(--green1-rgb, 0, 128, 96), 1); border-radius: 12px;">
+    <i class="bi bi-search ms-2" style="color: white; font-size: 18px;"></i>
+    <input type="text" class="search-bar-input ms-2" placeholder="Search" style="background: transparent; border: none; outline: none; color: white; font-size: 15px; width: 170px; height: 100%; min-height: 0; padding-left: 8px; padding-right: 8px;">
+</div>
+<style>
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar {
+                        height: 6px;
+                        background: transparent;
+                    }
+                    ::-webkit-scrollbar-thumb {
+                        background: var(--gradient-green);
+                        border-radius: 6px;
+                    }
+                    ::-webkit-scrollbar-track {
+                        background: transparent;
+                    }
+    .search-bar-container {
+        background: rgba(var(--green1-rgb, 0, 128, 96), 1); /* fallback if --green1-rgb is not set */
+        border-radius: 12px;
+        width: 216px;
+        height: 35px;
+    }
+    .search-bar-input::placeholder {
+        color: white;
+        opacity: 1;
+    }
+    .search-bar-input {
+        background: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        font-size: 15px;
+        width: 170px;
+        height: 100%;
+        min-height: 0;
+    }
+</style>
                 </div>
                 <div class="table-responsive" style="overflow-x: auto; min-width: 100%;">
                     <table class="table align-middle mb-0 program-table" style="border-radius: 0 0 12px 12px; overflow: hidden; width: 100%; border-bottom: none; padding: 0 24px 18px 24px;">
