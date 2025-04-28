@@ -39,6 +39,10 @@ Route::get('/about', [PageController::class, 'aboutpage'])->name('about');
 Route::get('/events', [PageController::class, 'eventcatalog'])->name('events');
 Route::get('/membership', [PageController::class, 'membershippage'])->name('membership'); 
 Route::get('/pages', [PageController::class, 'eventpages'])->name('pages'); 
+// Adding a route for the event registration page
+Route::get('/eventregispage', function () {
+    return view('main.eventregispage');
+})->name('eventregispage');
 // Adding a route for the contact page
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
@@ -72,7 +76,7 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/db_newprogram', function () {
         return view('admin.db_newprogram');
     })->name('db_newprogram');
-    Route::get('/events', [PageController::class, 'eventcatalog'])->name('events');
+
 });
 
 // for redirections in admin sidebar

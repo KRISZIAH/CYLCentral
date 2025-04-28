@@ -108,14 +108,16 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="program-card">
-                            <img src="{{ asset('img/event_pages/poster2.png') }}" alt="Event Image" class="img-fluid mb-2">
-                            <h5>EPISODE 47: Mental Health in the Workplace</h5>
-                                <div class="event-details">
-                                    <div class="d-flex align-items-center mb-2">
-                                        <i class="bi bi-calendar-event me-2"></i>
-                                        <span>Sunday, 2 Feb 2025</span>
-                                    </div>
-                                    <div class="d-flex align-items-center mb-2">
+                            <a href="{{ route('pages') }}">
+                                <img src="{{ asset('img/event_pages/poster2.png') }}" alt="Event Image" class="img-fluid mb-2">
+                            </a>
+                            <a href="{{ route('pages') }}" style="text-decoration: none !important; color: inherit !important;">
+                                <span style="color: #a0522d;"><h5>EPISODE 47: Mental Health in the Workplace</h5></span>
+                            </a>
+                            <div class="event-details">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-calendar-event me-2"></i>
+                                    <span>Sunday, 2 Feb 2025</span>
                                         <i class="bi bi-geo-alt me-2"></i>
                                         <span>Online via Zoom</span>
                                     </div>
@@ -124,7 +126,7 @@
                                         <span>4:00 PM – 6:00 PM</span>
                                     </div>
                                     <a href="#" class="see-details">See Details <span class="arrow">→</span></a>
-                                    <button class="btn btn-register" onclick="window.location.href='{{ route('pages') }}'">REGISTER</button>
+                                    <button class="btn btn-register" onclick="window.location.href='{{ route('eventregispage') }}'">REGISTER</button>
                                     <button class="btn btn-rate" onclick="window.location.href='your-link-here.html'">RATE</button>
                                 </div>
                             </div>
@@ -132,8 +134,12 @@
 
                     <div class="col-md-4">
                         <div class="program-card">
-                            <img src="{{ asset('img/event_pages/poster1.png') }}" alt="Event Image" class="img-fluid mb-2">
-                            <h5>EPISODE 46: Labor Laws on Employment Contract and...</h5>
+                            <a href="{{ route('pages') }}">
+                                <img src="{{ asset('img/event_pages/poster1.png') }}" alt="Event Image" class="img-fluid mb-2">
+                            </a>
+                            <a href="{{ route('pages') }}" style="text-decoration: none !important; color: inherit !important;">
+                                <span style="color: #a0522d;"><h5>EPISODE 46: Labor Laws on Employment Contract and...</h5></span>
+                            </a>
                                 <div class="event-details">
                                     <div class="d-flex align-items-center mb-2">
                                         <i class="bi bi-calendar-event me-2"></i>
@@ -148,7 +154,7 @@
                                         <span>4:00 PM – 6:00 PM</span>
                                     </div>
                                     <a href="#" class="see-details">See Details <span class="arrow">→</span></a>
-                                    <button class="btn btn-register" onclick="window.location.href='{{ route('pages') }}'">REGISTER</button>
+                                    <button class="btn btn-register" onclick="window.location.href='{{ route('eventregispage') }}'">REGISTER</button>
                                     <button class="btn btn-rate" onclick="window.location.href='your-link-here.html'">RATE</button>
                                 </div>
                         </div>
@@ -156,8 +162,12 @@
 
                     <div class="col-md-4">
                         <div class="program-card">
-                            <img src="{{ asset('img/event_pages/poster3.png') }}" alt="Event Image" class="img-fluid mb-2">
-                            <h5>EPISODE 45: Forensic Accounting</h5>
+                            <a href="{{ route('pages') }}">
+                                <img src="{{ asset('img/event_pages/poster3.png') }}" alt="Event Image" class="img-fluid mb-2">
+                            </a>
+                            <a href="{{ route('pages') }}" style="text-decoration: none !important; color: inherit !important;">
+                                <span style="color: #a0522d;"><h5>EPISODE 45: Forensic Accounting</h5></span>
+                            </a>
                             <div class="event-details">
                                 <div class="d-flex align-items-center mb-2">
                                     <i class="bi bi-calendar-event me-2"></i>
@@ -172,7 +182,7 @@
                                     <span>4:00 PM – 6:00 PM</span>
                                 </div>
                                 <a href="#" class="see-details">See Details <span class="arrow">→</span></a>
-                                <button class="btn btn-register" onclick="window.location.href='{{ route('pages') }}'">REGISTER</button>
+                                <button class="btn btn-register" onclick="window.location.href='{{ route('eventregispage') }}'">REGISTER</button>
                                 <button class="btn btn-rate" onclick="window.location.href='your-link-here.html'">RATE</button>
                             </div>
                         </div>

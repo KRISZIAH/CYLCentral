@@ -19,13 +19,17 @@ export default defineConfig({
                 'resources/css/main-css/eventcatalog.css',
                 'resources/css/main-css/files.css',
                 'resources/css/main-css/eventpages.css',
+'resources/css/main-css/eventregispage.css',
                 'resources/css/main-css/aboutpage.css',
+
                 
                 // Main JS files
                 'resources/js/main-js/home.js',
                 'resources/js/main-js/editprofile.js',
                 'resources/js/main-js/files.js',
                 'resources/js/main-js/eventpages.js',
+'resources/js/main-js/eventregispage.js',
+
                 
                 // Admin CSS files
                 'resources/css/admin-css/db_overview.css',
@@ -60,11 +64,7 @@ export default defineConfig({
                 'resources/js/partials-js/navbar.js',
                 'resources/js/partials-js/footer.js',
                 // Blade views for Vite hot reload
-                'resources/views/admin/db_programs.blade.php',
-                'resources/views/admin/db_draftprog.blade.php',
-                'resources/views/admin/db_announcement.blade.php',
-                'resources/views/admin/db_users.blade.php',
-                'resources/views/admin/db_membership.blade.php',
+                // Removed .blade.php files from input array. If you want hot reload for Blade files, use the 'refresh' option only.
                 
                 // Commented files for reference
                 // 'resources/css/announcement_tab.css',

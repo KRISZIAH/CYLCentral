@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+  --green1: #003D2B;
+  --green2: #21A179;
+  --green3: #628474;
+  --mint: #E4F1EA;
+  --brown: #C56659;
+  --black: #141414;
+  --white: #FFFFFF;
+
+
+  --gradient-green: linear-gradient(135deg, #003D2B, #21A179);
+  --gradient-brown: linear-gradient(135deg, #A24E43, #C56659);
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--mint);
+  color: var(--green1);
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+
+/* SECTION 1 */
+.section-1 {
+  background: url('/img/event_pages/event_reg.png') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  text-align: center;
+  position: relative;
+}
+
+
+.section-1 h1 {
+  font-size: 3rem;
+}
+
+
+.section-1 .line {
+  width: 100px;
+  height: 4px;
+  background-color: var(--brown);
+  margin-top: 10px;
+}
+
+
+/* SECTION 2 */
+.section-two {
+  background-color: var(--mint);
+}
+
+
+/* First Container (Event Title) */
+.floating-header {
+  background-color: var(--green3);
+  color: var(--white);
+  padding: 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 5;
+  white-space: normal;
+  text-align: center;
+  width: 88%;
+}
+
+
+.floating-header p {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+
+/* Second Container (Instruction) */
+.form-instruction {
+  background-color: var(--white);
+  border: 2px solid var(--green3);
+  padding: 25px 25px;
+  color: var(--green1);
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+
+.form-instruction p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+/* Form Container */
+.form-container {
+  background-color: var(--white);
+  border: 2px solid var(--green3);
+  padding: 20px 25px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+
+.required-asterisk {
+  color: #D22B2B;
+  font-weight: bold;
+}
+
+
+.form-control, .form-select {
+  font-size: 12px;
+  font-style: italic;
+  border: 1px solid var(--green3);
+  font-style: normal;
+  color: var(--green1);
+}
+
+
+/* Style the default option when it's selected */
+.form-select:invalid {
+  font-style: italic;
+  color: var(--green3);
+  opacity: 1;
+}
+
+
+.form-control:invalid {
+  font-style: italic;
+  color: var(--green3);
+  opacity: 1;
+}
+
+
+.form-control:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--green2);
+  box-shadow: 0 0 0 4px rgba(33, 161, 121, 0.25); /* soft green glow */
+}
+
+
+select option:disabled {
+  font-style: italic;
+  color: var(--green3); /* optional: soft color for placeholder */
+}
+
+
+/* Wrapper around input to position the icon */
+.date-input-wrapper {
+  position: relative;
+}
+
+
+.birthdate-input {
+  padding-right: 40px; /* space for the icon */
+}
+
+
+/* Calendar icon inside the input field */
+.calendar-icon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  color: var(--green1); /* your green */
+  cursor: pointer;
+  pointer-events: all;
+  font-size: 22px;
+}
+
+
+/* Hide default calendar icon in Chrome */
+.birthdate-input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  display: none;
+}
+
+
+/* Optional: for Firefox */
+.birthdate-input {
+  -moz-appearance: textfield;
+}
+
+
+/* Fourth Container */
+/* Wrapper for both options */
+.radio-options-wrapper {
+  border: 1px solid var(--green3);
+  border-radius: 10px;
+  overflow: hidden; /* ensures inner radius stays clean */
+  margin-bottom: 20px;
+}
+
+
+/* Shared option styling */
+.radio-option {
+  padding: 15px 20px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+
+/* Top border only for upload (divider look) */
+.radio-option.upload-option {
+  border-top: 1px solid var(--green2);
+}
+
+
+/* When selected, highlight background */
+.radio-option.selected {
+  background-color: #eaf7f1; /* subtle green */
+}
+
+
+.radio-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.radio-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.paymongo-label, .upload-label {
+  margin: 0;
+  font-weight: 600;
+}
+
+
+.paymongo-logo {
+  height: 1.2em;
+  width: auto;
+}
+
+
+.small {
+  margin: 10px 0 0 32px;
+  font-size: 0.9em;
+}
+
+
+.app-fee {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+
+/* Container still looks the same */
+.payment-container {
+  background-color: var(--white);
+  border: 2px solid var(--green3);
+  padding: 20px 25px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+
+
+
+.btn-pay {
+  background: var(--gradient-green);
+  color: var(--white);
+  border: none;
+  padding: 10px 40px;
+  border-radius: 16px;
+}
+
+
+.btn-pay:hover {
+  background: linear-gradient(135deg, #21A179, #003D2B);
+  transition: all 0.3s ease-in-out;
+}
+
+
+/* Color chnage for radiobutton */
+/* Hide default radio */
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.1em;
+  height: 1.1em;
+  border: 2px solid var(--green2); /* your mint green */
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+
+/* Inner dot */
+input[type="radio"]::before {
+  content: "";
+  width: 0.55em;
+  height: 0.55em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.2s ease-in-out;
+  background-color: var(--green2); /* your mint green */
+}
+
+
+/* Checked state */
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+
+.total {
+  font-weight: 600;
+  color: var(--green1);
+}
+.fifty-total {
+  color: var(--green2);
+  font-weight: 600;
+}
+
+
+.btn-submit {
+  background: var(--gradient-brown);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 16px;
+}
+
+
+.btn-submit:hover {
+  background: linear-gradient(135deg, #C56659, #A24E43);
+  color: var(--white);
+  transition: all 0.3s ease-in-out;
+}
+
+
+.btn-clear {
+  border: 2px solid var(--brown);
+  color: var(--brown);
+  background-color: transparent;
+  padding: 12px;
+  border-radius: 16px;
+}
+
+
+.btn-clear:hover {
+  background: var(--white);
+  border: 2px solid var(--brown);
+  color: var(--brown);
+  transition: all 0.3s ease-in-out;
+}
+
+
+@media (max-width: 767px) {
+  .btn-submit {
+    margin-top: 20px; /* or padding-top */
+  }
+}

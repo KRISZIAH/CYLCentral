@@ -22,6 +22,7 @@
     @vite('resources/css/main-css/eventcatalog.css')
     @vite('resources/css/main-css/files.css')
     @vite('resources/css/main-css/eventpages.css')
+    @vite('resources/css/main-css/eventregispage.css')
     @vite('resources/css/partials-css/navbar.css')
     @vite('resources/css/partials-css/navbar.css')
     @vite('resources/css/partials-css/footer.css')
@@ -72,5 +73,22 @@
 
     <!-- Bootstrap JS (Include before closing </body>) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Floating Animation Style -->
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        #chatbot-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+
+    <!-- Chatbot Icon -->
+    <div id="chatbot-icon" style="position: fixed; bottom: 40px; right: 40px; z-index: 1000; cursor: pointer;">
+        <img src="{{ asset('img/home/cordibot gif.gif') }}" alt="Cordibot" height="100" width="100" style="border-radius:50%; background:transparent;">
+    </div>
 </body>
 </html>

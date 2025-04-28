@@ -26,7 +26,7 @@
                         <li class="list-group-item"><span>Inclusions:</span> E-certificate</li>
                     </ul>
                     <div class="text-start mt-3">
-                        <a href="your-registration-link.html" class="custom-btn">REGISTER HERE</a>
+                        <a href="{{ route('eventregispage') }}" class="custom-btn">REGISTER HERE</a>
                     </div>
 
 

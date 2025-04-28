@@ -195,7 +195,28 @@
     text-decoration: underline;
 }
 
-/* buttons */
+.event-title-link,
+.event-title-link:link,
+.event-title-link:visited,
+.event-title-link:hover,
+.event-title-link:active {
+  color: #a0522d !important;
+  text-decoration: none !important;
+}
+.event-title-link h5 {
+  color: #a0522d !important;
+  text-decoration: none !important;
+}
+
+.event-title-link,
+.event-title-link:link,
+.event-title-link:visited,
+.event-title-link:hover,
+.event-title-link:active {
+  color: #a0522d !important;
+  text-decoration: none !important;
+}
+
 .event-details .btn-register {
     background: var(--brown);
     color: var(--white);
