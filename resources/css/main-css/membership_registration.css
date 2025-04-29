@@ -1,3 +1,7 @@
+.membership-registration{ 
+    background-color: var(--mint);
+}
+
 .herosection {
     position: relative;
     padding: 20px 0;
@@ -33,7 +37,6 @@
     margin: 10px auto 0;
   }
   
-  
   .hero .container{
     justify-content: center;
     position: relative;
@@ -42,17 +45,17 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     /* display: flex; */
     justify-content: center;
-    align-items: center;
+    align-items: center;                                           
   }
   
   
-  .container .stat-item1 {
+  /* .container .stat-item1 {
     max-width: 8800px;
-    margin: auto;
     padding-top: 20px;
     padding-left: 15px;
     padding-right: 15px;
-  }
+  } */
+
   .logo {
     display: flex;
     width: 100%;
@@ -88,10 +91,6 @@
     align-items: center;
     color: var(--green1);
   }
-
-  .highlight {
-    font-weight: bold;
-  }
   
   /*--------------------------------------------------------------
   # Global Section Titles (do not delete)
@@ -114,3 +113,273 @@
     color: var(--green1);
     font-size: 46px;
   }
+
+  /*--------------------------------------------------------------
+  # Membership Registration
+  --------------------------------------------------------------*/
+
+.section-head .section-title {
+  background: linear-gradient(to right, var(--green1), var(--green2));
+  color: var(--white);
+  font-size: 24px;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.section-head {
+  margin-bottom: 0;
+}
+
+.form-container {
+  background-color: #ffff;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 40px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.form-container form {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.form-section {
+  padding: 0;
+  margin: 0;
+}
+
+.form-section > .row:last-child {
+  margin-bottom: 0;
+}
+
+.custom-select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.form-section .program-select {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 1px solid #E2E2E2;
+    border-radius: 8px;
+    background-color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    color: #495057;
+    cursor: pointer;
+}
+
+.form-section .program-select:focus {
+    outline: none;
+    border-color: var(--green1);
+    box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.1);
+}
+
+.select-arrow {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #495057;
+    border-bottom: 2px solid #495057;
+    transform: translateY(-50%) rotate(45deg);
+    pointer-events: none;
+}
+
+.form-section .program-select option {
+    padding: 12px;
+    font-size: 16px;
+}
+
+.form-section .program-select option:first-child {
+    color: #6c757d;
+}
+
+.form-section .program-select:invalid {
+    color: #6c757d;
+}
+
+.selected-programs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.selected-program {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(to right, var(--green1), var(--green2));
+    color: white;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 14px;
+}
+
+.remove-program {
+    background: none;
+    border: none;
+    color: white;
+    margin-left: 8px;
+    padding: 0 4px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.remove-program:hover {
+    opacity: 0.8;
+}
+
+.required-field::after {
+  content: "*";
+  color: red;
+  margin-left: 4px;
+}
+.phone-input {
+    display: flex;
+}
+.phone-prefix {
+    width: 80px;
+    flex-shrink: 0;
+}
+.form-section {
+    margin-bottom: 20px;
+}
+
+.form-section textarea.form-control {
+    width: 100%;
+    display: block;
+}
+
+.form-section .mb-3 {
+    max-width: 100%;
+}
+
+.form-container + .section-head {
+    margin-top: 30px;
+}
+
+/* Upload Box Styles */
+.upload-box {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    background-color: #f8f9fa;
+    margin: 0;
+    max-width: 100%;
+}
+
+/* Payment Styles */
+.payment-options {
+    margin: 20px 0;
+    max-width: 100%;
+}
+
+.payment-option {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f8f9fa;
+}
+
+.payment-option:has(input:checked) {
+    border-color: var(--green1);
+    background-color: #f0f9f4;
+}
+
+.payment-logo {
+    height: 30px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.payment-note {
+    margin: 10px 0 0 25px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.payment-total {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.total-amount {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--green1);
+}
+
+/* Button Styles */
+.text-end .btn-success{
+  background: linear-gradient(to right, var(--green1), var(--green2));
+  color: var(--white);
+  padding: 10px 30px;
+  border-radius: 16px;
+  font-size: 16px;
+}
+
+.text-end .btn-success:hover {
+  background: transparent;
+  color: var(--green1);
+}
+
+.text-center .btn-success {
+    background: linear-gradient(to right, var(--green1), var(--green2));
+    color: var(--white);
+    padding: 10px 30px;
+    border-radius: 16px;
+    font-size: 16px;
+}
+
+.text-center .btn-success:hover {
+    background: transparent;
+    color: var(--green1);
+}
+
+.text-center {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    padding: 20px;
+    gap: 10px;
+}
+
+.text-center .btn-primary {
+    font-size: 16px;
+    background-color: var(--brown);
+    border-color: var(--brown);
+    padding: 10px 20px;
+    border-radius: 16px;
+}
+
+.text-center .btn-outline-secondary {
+    background-color: transparent;
+    border-color: var(--brown);
+    color: var(--brown);
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 16px;
+}
+
+.text-center .btn-primary:hover {
+  background-color: transparent;
+  border-color: var(--brown);
+  color: var(--brown);
+}
+
+.text-center .btn-outline-secondary:hover {
+    background-color: var(--brown);
+    border-color: var(--brown);
+}

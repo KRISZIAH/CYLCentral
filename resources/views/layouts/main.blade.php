@@ -76,6 +76,7 @@
     @vite('resources/js/main-js/editprofile.js')
     @vite('resources/js/main-js/eventcatalog.js')
     @vite('resources/js/main-js/eventpages.js')
+    @vite('resources/js/main-js/membership_registration.js')
     @vite('resources/js/partials-js/navbar.js')
     @vite('resources/js/partials-js/footer.js')
 
