@@ -23,22 +23,20 @@
         <li class="nav-item mb-2 mt-4" style="color: var(--green1); font-weight: 500; font-size: 16px;">Tools</li>
 
         <li class="nav-item">
-            <a href="{{ route('programs') }}" class="nav-link d-flex align-items-center px-2 py-1{{ (request()->routeIs('programs') || request()->routeIs('events')) ? ' active' : '' }}" style="height:33px; width:210px; border-radius:8px; font-size:16px; font-weight:400; background: {{ (request()->routeIs('programs') || request()->routeIs('events')) ? 'var(--gradient-green)' : 'rgba(228,241,234,0.5)' }}; padding: 0 16px; margin-bottom: 6px;">
+            <a href="{{ route('programs.index') }}" class="nav-link d-flex align-items-center px-2 py-1{{ (request()->routeIs('programs.index') || request()->routeIs('events') || request()->routeIs('programs.drafts')) ? ' active' : '' }}" style="height:33px; width:210px; border-radius:8px; font-size:16px; font-weight:400; background: {{ (request()->routeIs('programs.index') || request()->routeIs('events') || request()->routeIs('programs.drafts')) ? 'var(--gradient-green)' : 'rgba(228,241,234,0.5)' }}; padding: 0 16px; margin-bottom: 6px;">
                 <i class="bi bi-layout-text-window-reverse me-2" style="font-size:18px;"></i> CMS
             </a>
         </li>
-        @if(request()->routeIs('programs') || request()->routeIs('events'))
         <li class="nav-item ms-4">
-            <a href="{{ route('programs') }}" class="nav-link d-flex align-items-center px-2 py-1{{ request()->routeIs('programs') ? ' active' : '' }}" style="height:33px; width:185px; border-radius:8px; font-size:15px; font-weight:400; background: {{ request()->routeIs('programs') ? 'var(--green1)' : 'rgba(228,241,234,0.5)' }}; color: {{ request()->routeIs('programs') ? 'white' : '#003d2b' }}; margin-bottom: 4px;">
+            <a href="{{ route('programs.index') }}" class="nav-link d-flex align-items-center px-2 py-1{{ request()->routeIs('programs.index') ? ' active' : '' }}" style="height:33px; width:185px; border-radius:8px; font-size:15px; font-weight:400; background: {{ request()->routeIs('programs.index') ? 'var(--green1)' : 'rgba(228,241,234,0.5)' }}; color: {{ request()->routeIs('programs.index') ? 'white' : '#003d2b' }}; margin-bottom: 4px;">
                 Programs
             </a>
         </li>
         <li class="nav-item ms-4">
-            <a href="{{ route('events') }}" class="nav-link d-flex align-items-center px-2 py-1{{ request()->routeIs('events') ? ' active' : '' }}" style="height:33px; width:185px; border-radius:8px; font-size:15px; font-weight:400; background: {{ request()->routeIs('events') ? 'rgba(228,241,234,0.5)' : 'rgba(228,241,234,0.5)' }}; color: {{ request()->routeIs('events') ? '#003d2b' : '#003d2b' }}; margin-bottom: 8px;">
+            <a href="{{ route('events') }}" class="nav-link d-flex align-items-center px-2 py-1{{ request()->routeIs('events') ? ' active' : '' }}" style="height:33px; width:185px; border-radius:8px; font-size:15px; font-weight:400; background: {{ request()->routeIs('events') ? 'var(--green1)' : 'rgba(228,241,234,0.5)' }}; color: {{ request()->routeIs('events') ? 'white' : '#003d2b' }}; margin-bottom: 8px;">
                 Events
             </a>
         </li>
-        @endif
         <!-- Users -->
         <li class="nav-item">
             <a href="{{ route('users') }}" class="nav-link d-flex align-items-center px-2 py-1 {{ request()->routeIs('users') ? 'active' : '' }}" style="height:33px; width:210px; border-radius:8px; font-size:16px; font-weight:400; background: {{ request()->routeIs('users') ? 'var(--gradient-green)' : 'rgba(228,241,234,0.5)' }}; padding: 0 16px; margin-bottom: 6px;">
