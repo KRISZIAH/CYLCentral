@@ -21,14 +21,49 @@ class LoginController extends Controller
             'password' => 'required|string',
         ]);
     
-        // Attempt ADMIN login
+        // Attempt ADMIN login first
         if (Auth::guard('admin')->attempt($request->only('email', 'password'))) {
-            return redirect()->route('dashboard')->with('success', 'Welcome Admin!');
+            // Admin is authenticated, redirect to admin dashboard
+            return redirect()->intended(route('dashboard'))->with('success', 'Welcome Admin!');
         }
     
         // Attempt USER login (default guard)
         if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect()->route('home')->with('success', 'Login successful!');
+            // Get the authenticated user
+            $user = Auth::user();
+            
+            // Check user role and redirect accordingly
+            $adminRoles = ['Admin', 'Program Director', 'Executive Director'];
+            
+            if (in_array($user->role, $adminRoles)) {
+                // For users with admin roles, we need to log them out of the web guard
+                // and log them in with the admin guard to prevent redirection loops
+                Auth::logout();
+                
+                // Check if admin record exists
+                $admin = Admin::where('email', $user->email)->first();
+                
+                if (!$admin) {
+                    // Create a new admin record
+                    $admin = new Admin();
+                    $admin->email = $user->email;
+                    $admin->password = $user->password;
+                    $admin->first_name = $user->first_name;
+                    $admin->last_name = $user->last_name;
+                    $admin->name = trim(($user->first_name ?? '') . ' ' . ($user->last_name ?? ''));
+                    $admin->save();
+                }
+                
+                // Log in as admin
+                Auth::guard('admin')->login($admin);
+                
+                return redirect()->intended(route('dashboard'))
+                    ->with('success', 'Welcome ' . $user->role . '!');
+            } else {
+                // Regular users go to the home page
+                return redirect()->intended(route('home'))
+                    ->with('success', 'Login successful!');
+            }
         }
     
         // If both fail

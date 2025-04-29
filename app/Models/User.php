@@ -28,6 +28,16 @@ class User extends Authenticatable
     ];
     
     /**
+     * Get the user's full name by concatenating first and last name.
+     *
+     * @return string
+     */
+    public function getFullName()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
+
+    /**
      * Get the user's profile photo URL.
      *
      * @return string

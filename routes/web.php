@@ -24,6 +24,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\ProgramController;
 
@@ -44,6 +45,18 @@ Route::get('/pages', [PageController::class, 'eventpages'])->name('pages');
 // Adding a route for the contact page
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
+
+// Admin Profile Routes
+Route::middleware(['auth:admin'])->group(function () {
+    Route::get('/admin/editprofile', [AdminProfileController::class, 'edit'])->name('admin.editprofile');
+    Route::put('/admin/editprofile', [AdminProfileController::class, 'update'])->name('admin.updateprofile');
+    Route::post('/admin/logout', function() {
+        Auth::guard('admin')->logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+        return redirect()->route('login')->with('success', 'Logged out successfully.');
+    })->name('admin.logout');
+});
 
 //Temporary routes (For Admin Side)
 // Route::get('/kpi', [PageController::class, 'dashboard_analytics'])->name('kpi');
