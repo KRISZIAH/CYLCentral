@@ -33,6 +33,17 @@ return new class extends Migration
                 $table->string('password');
                 $table->timestamps();
             });
+
+            // In a migration file (create a new one if needed)
+            Schema::table('admins', function (Blueprint $table) {
+                $table->string('name')->after('id');
+            });
+
+            if (!Schema::hasTable('admins')) {
+                Schema::create('admins', function (Blueprint $table) {
+                    // your columns
+                });
+            }
         }
 
 };

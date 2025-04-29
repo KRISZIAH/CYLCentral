@@ -14,9 +14,6 @@ Route::get('/db_announcement', function () {
     return view('admin.db_announcement');
 })->name('db_announcement');
 
-Route::get('/db_users', function () {
-    return view('admin.db_users');
-})->name('db_users');
 
 Route::get('/db_membership', function () {
     return view('admin.db_membership');
@@ -25,6 +22,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AnnouncementController;
 
 // Initial Route
@@ -111,3 +109,19 @@ Route::get('/users', [UserController::class, 'dashboard_users'])->name('users');
 
 Route::get('/announcements_user', [AnnouncementController::class, 'announcement_user'])->name('announcements_user');
 
+
+
+//ADMIN SIDE
+//----------------Get users----------------//
+Route::get('/admin/db_users', [UserController::class, 'dashboard_users'])->name('db_users');
+Route::get('/admin/users', [UserController::class, 'dashboard_users'])->name('dashboard.users');
+
+//----------------User Management Routes----------------//
+// Update user
+Route::put('/admin/users/{id}', [UserController::class, 'updateUser'])->name('updateUser');
+// Delete user
+Route::delete('/admin/users/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
+// Create user form
+Route::get('/admin/users/create', [UserController::class, 'createUser'])->name('createUser');
+// Store new user
+Route::post('/admin/users', [UserController::class, 'storeUser'])->name('storeUser');

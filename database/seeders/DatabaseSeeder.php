@@ -3,14 +3,14 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Database\Seeders\AdminUserSeeder; // ✅ import this!
+use Database\Seeders\AdminSeeder;
 
 class DatabaseSeeder extends Seeder
 {
-    public function run(): void
+    public function run()
     {
         $this->call([
-            AdminUserSeeder::class,
+            AdminSeeder::class,
         ]);
     }
 }

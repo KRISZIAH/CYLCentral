@@ -119,18 +119,18 @@
                         font-weight: 600; 
                         text-align: center;
                     }
-                    .role-director { 
-                        color: #0066CC; 
+                    .role-program { 
+                        color: #5C0EA5; 
                         font-weight: 600; 
                         text-align: center;
                     }
-                    .role-admin { 
+                    .role-admin, .role-executive { 
                         color: #E00000; 
                         font-weight: 600; 
                         text-align: center;
                     }
                     .role-participant { 
-                        color: #FF9900; 
+                        color: #E2AE02; 
                         font-weight: 600; 
                         text-align: center;
                     }
@@ -301,7 +301,7 @@
                 </div>
                 <div class="d-flex align-items-center" style="gap: 0.4rem;">
                     <button type="button" class="extbtn me-2"><i class="bi bi-download me-2"></i>Export Users</button>
-                    <button type="button" class="addbtn"><i class="bi bi-plus-lg me-2"></i>Add User</button>
+                    <button type="button" class="addbtn" data-bs-toggle="modal" data-bs-target="#addUserModal"><i class="bi bi-plus-lg me-2"></i>Add User</button>
                 </div>
             </div>
             <div class="rounded shadow-sm p-0" style="background: white;">
@@ -322,93 +322,130 @@
                                 <th scope="col" class="gradient-green-text col-name">First Name</th>
                                 <th scope="col" class="gradient-green-text col-name">Last Name</th>
                                 <th scope="col" class="gradient-green-text col-email">Email</th>
+                                <th scope="col" class="gradient-green-text col-password">Password</th>
                                 <th scope="col" class="gradient-green-text col-contact">Contact Number</th>
                                 <th scope="col" class="gradient-green-text col-date">Date Created</th>
                                 <th scope="col" class="gradient-green-text col-role">Role</th>
                                 <th scope="col" class="gradient-green-text col-action">Action</th>
                             </tr>
                             <tr>
-                                <th colspan="10" style="padding: 0; height: 2px; background: var(--gradient-green); border: none;"></th>
+                                <th colspan="11" style="padding: 0; height: 2px; background: var(--gradient-green); border: none;"></th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($users as $user)
                             <tr>
                                 <td><input type="checkbox" class="row-check"></td>
-                                <td>0001</td>
-                                <td><img src="{{ asset('img/placeholder-profile.jpg') }}" alt="User Profile" class="rounded-circle" width="40" height="40"></td>
-                                <td>Juan</td>
-                                <td>Dela Cruz</td>
-                                <td>juandc@gmail.com</td>
-                                <td>+639123456789</td>
-                                <td>12-01-2024</td>
-                                <td class="role-member">Member</td>
+                                <td>{{ str_pad($user->id, 4, '0', STR_PAD_LEFT) }}</td>
+                                <td><img src="{{ $user->profile_photo_url ?? asset('img/placeholder-profile.jpg') }}" alt="User Profile" class="rounded-circle" width="40" height="40"></td>
+                                <td>{{$user->first_name}}</td>
+                                <td>{{$user->last_name}}</td>
+                                <td>{{$user->email}}</td>
+                                <td>********</td>
+                                <td>{{$user->phone}}</td>
+                                <td>{{$user->created_at->format('m-d-Y')}}</td>
+                                <td style="font-weight: 600; text-align: center; color: 
+                                    @php
+                                    $roleText = strtolower($user->role);
+                                    if (strpos($roleText, 'member') !== false) {
+                                        echo '#00A825';
+                                    } elseif (strpos($roleText, 'program') !== false || strpos($roleText, 'director') !== false) {
+                                        echo '#5C0EA5';
+                                    } elseif (strpos($roleText, 'admin') !== false || strpos($roleText, 'executive') !== false) {
+                                        echo '#E00000';
+                                    } elseif (strpos($roleText, 'participant') !== false) {
+                                        echo '#E2AE02';
+                                    } else {
+                                        echo '#000000';
+                                    }
+                                    @endphp
+                                ">{{$user->role}}</td>
                                 <td>
-                                    <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
-                                    <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
+                                    <a href="#" class="me-2 action-icon brown-icon" data-bs-toggle="modal" data-bs-target="#editUserModal{{$user->id}}"><i class="bi bi-pen-fill"></i></a>
+
+                                    <!-- Edit User Modal -->
+                                    <div class="modal fade" id="editUserModal{{$user->id}}" tabindex="-1" aria-labelledby="editUserModalLabel{{$user->id}}" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                        <form method="post" action="{{ route('updateUser', $user->id) }}">
+                                        @csrf
+                                        @method('PUT')
+                                        <div class="modal-content">
+                                            <div class="modal-header" style="background: var(--gradient-green); color: white;">
+                                            <h5 class="modal-title" id="editUserModalLabel{{ $user->id }}">Edit User</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                            <div class="mb-3">
+                                                <label>First Name</label>
+                                                <input type="text" name="first_name" class="form-control" value="{{ $user->first_name }}" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label>Last Name</label>
+                                                <input type="text" name="last_name" class="form-control" value="{{ $user->last_name }}" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label>Email</label>
+                                                <input type="email" name="email" class="form-control" value="{{ $user->email }}" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label>Password</label>
+                                                <input type="password" name="password" class="form-control" placeholder="Enter new password (leave empty to keep current)">
+                                                <small class="text-muted">Leave blank to keep current password</small>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label>Phone</label>
+                                                <input type="text" name="phone" class="form-control" value="{{ $user->phone }}" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label>Role</label>
+                                                <select name="role" class="form-control" required>
+                                                    <option value="Participant" {{ $user->role == 'Participant' ? 'selected' : '' }}>Participant</option>
+                                                    <option value="Member" {{ $user->role == 'Member' ? 'selected' : '' }}>Member</option>
+                                                    <option value="Director" {{ $user->role == 'Director' ? 'selected' : '' }}>Director</option>
+                                                    <option value="Admin" {{ $user->role == 'Admin' ? 'selected' : '' }}>Admin</option>
+                                                </select>
+                                            </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <button type="submit" class="btn btn-success">Save changes</button>
+                                            </div>
+                                        </div>
+                                        </form>
+                                    </div>
+                                    </div>
+
+                                    <!-- Delete User Button -->
+                                    <a href="#" class="action-icon delete brown-icon" data-bs-toggle="modal" data-bs-target="#deleteUserModal{{$user->id}}"><i class="bi bi-trash-fill"></i></a>
+                                    
+                                    <!-- Delete User Modal -->
+                                    <div class="modal fade" id="deleteUserModal{{$user->id}}" tabindex="-1" aria-labelledby="deleteUserModalLabel{{$user->id}}" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header" style="background: #E00000; color: white;">
+                                                    <h5 class="modal-title" id="deleteUserModalLabel{{$user->id}}">Confirm Delete</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Are you sure you want to delete <strong>{{$user->first_name}} {{$user->last_name}}</strong>? This action cannot be undone.</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                    <form action="{{ route('deleteUser', $user->id) }}" method="POST" style="display: inline;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger">Delete User</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td><input type="checkbox" class="row-check"></td>
-                                <td>0002</td>
-                                <td><img src="{{ asset('img/placeholder-profile.jpg') }}" alt="User Profile" class="rounded-circle" width="40" height="40"></td>
-                                <td>Maria</td>
-                                <td>Santos</td>
-                                <td>juandc@gmail.com</td>
-                                <td>+639123456789</td>
-                                <td>12-03-2024</td>
-                                <td class="role-member">Member</td>
-                                <td>
-                                    <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
-                                    <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="row-check"></td>
-                                <td>0003</td>
-                                <td><img src="{{ asset('img/placeholder-profile.jpg') }}" alt="User Profile" class="rounded-circle" width="40" height="40"></td>
-                                <td>Carlo</td>
-                                <td>Reyes</td>
-                                <td>juandc@gmail.com</td>
-                                <td>+639123456789</td>
-                                <td>12-05-2024</td>
-                                <td class="role-director">Director</td>
-                                <td>
-                                    <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
-                                    <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="row-check"></td>
-                                <td>0004</td>
-                                <td><img src="{{ asset('img/placeholder-profile.jpg') }}" alt="User Profile" class="rounded-circle" width="40" height="40"></td>
-                                <td>Andrea</td>
-                                <td>Lopez</td>
-                                <td>juandc@gmail.com</td>
-                                <td>+639123456789</td>
-                                <td>12-07-2024</td>
-                                <td class="role-participant">Participant</td>
-                                <td>
-                                    <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
-                                    <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="row-check"></td>
-                                <td>0005</td>
-                                <td><img src="{{ asset('img/placeholder-profile.jpg') }}" alt="User Profile" class="rounded-circle" width="40" height="40"></td>
-                                <td>Jennifer</td>
-                                <td>Moltio</td>
-                                <td>juandc@gmail.com</td>
-                                <td>+639123456789</td>
-                                <td>12-08-2024</td>
-                                <td class="role-admin">Admin</td>
-                                <td>
-                                    <a href="#" class="me-2" style="color: var(--brown);"><i class="bi bi-pen-fill"></i></a>
-                                    <a href="#" style="color: var(--brown);"><i class="bi bi-trash-fill"></i></a>
-                                </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
+                    {{$users->links()}}
                 </div>
             </div>
             <div class="pagination-container mt-3 mb-4 d-flex justify-content-end me-2">
@@ -426,6 +463,83 @@
         </div>
     </div>
 </div>
+
+<!-- Add User Modal -->
+<div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form method="post" action="{{ route('storeUser') }}">
+            @csrf
+            <div class="modal-content">
+                <div class="modal-header" style="background: var(--gradient-green); color: white;">
+                    <h5 class="modal-title" id="addUserModalLabel">Add New User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label>First Name</label>
+                        <input type="text" name="first_name" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Last Name</label>
+                        <input type="text" name="last_name" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Phone</label>
+                        <input type="text" name="phone" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Role</label>
+                        <select name="role" class="form-control" required>
+                            <option value="Participant">Participant</option>
+                            <option value="Member">Member</option>
+                            <option value="Director">Director</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label>Password</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Confirm Password</label>
+                        <input type="password" name="password_confirmation" class="form-control" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-success">Create User</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Success Message Toast -->
+@if(session('success'))
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="successToast" class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header" style="background-color: #4CAF50; color: white;">
+            <strong class="me-auto">Success</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            {{ session('success') }}
+        </div>
+    </div>
+</div>
+<script>
+    // Auto hide toast after 5 seconds
+    setTimeout(function() {
+        var toast = document.getElementById('successToast');
+        var bsToast = new bootstrap.Toast(toast);
+        bsToast.hide();
+    }, 5000);
+</script>
+@endif
 
 @push('scripts')
 <script>
@@ -451,24 +565,7 @@
         const paginationLinks = document.querySelectorAll('.pagination-number, .pagination-arrow');
         const totalPages = 2; // Total number of pages available
         let currentPage = 1;
-        
-        // Sample data for demonstration - could be replaced with dynamic data
-        const pages = {
-            1: [
-                { id: '0001', firstName: 'Juan', lastName: 'Dela Cruz', email: 'juandc@gmail.com', contact: '+639123456789', date: '12-01-2024', role: 'Member' },
-                { id: '0002', firstName: 'Maria', lastName: 'Santos', email: 'juandc@gmail.com', contact: '+639123456789', date: '12-03-2024', role: 'Member' },
-                { id: '0003', firstName: 'Carlo', lastName: 'Reyes', email: 'juandc@gmail.com', contact: '+639123456789', date: '12-05-2024', role: 'Director' },
-                { id: '0004', firstName: 'Andrea', lastName: 'Lopez', email: 'juandc@gmail.com', contact: '+639123456789', date: '12-07-2024', role: 'Participant' },
-                { id: '0005', firstName: 'Jennifer', lastName: 'Moltio', email: 'juandc@gmail.com', contact: '+639123456789', date: '12-08-2024', role: 'Admin' }
-            ],
-            2: [
-                { id: '0006', firstName: 'Patricia', lastName: 'Gomez', email: 'patricia@gmail.com', contact: '+639123456789', date: '12-10-2024', role: 'Member' },
-                { id: '0007', firstName: 'Richard', lastName: 'Tan', email: 'richard@gmail.com', contact: '+639123456789', date: '11-25-2024', role: 'Member' },
-                { id: '0008', firstName: 'Tracy', lastName: 'Wal', email: 'tracy@gmail.com', contact: '+639123456789', date: '11-23-2024', role: 'Director' },
-                { id: '0009', firstName: 'Jaemil', lastName: 'Javier', email: 'jaemil@gmail.com', contact: '+639123456789', date: '11-23-2024', role: 'Participant' },
-                { id: '0010', firstName: 'Jenny', lastName: 'Cruz', email: 'jenny@gmail.com', contact: '+639123456789', date: '10-17-2024', role: 'Admin' }
-            ]
-        };
+    
         
         // Update pagination UI based on current page
         function updatePagination() {
