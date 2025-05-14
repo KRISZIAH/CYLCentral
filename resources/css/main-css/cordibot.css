@@ -1,0 +1,36 @@
+#cordibot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
+  
+  #cordibot-icon img {
+    width: 60px;
+    cursor: pointer;
+  }
+  
+  #cordibot-window {
+    width: 320px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .card-header {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  #cordibot-messages {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .cordibot-message {
+    margin-bottom: 1rem;
+  }
+  
+  .sender-info {
+    display: flex;
+    align-items: center;
+  }
+  

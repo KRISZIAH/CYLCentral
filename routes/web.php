@@ -5,6 +5,12 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CordiBotController;
+
+// CordiBot Routes
+Route::get('/cordibot', fn() => view('cordibot'));
+Route::post('/cordibot/message', [CordiBotController::class, 'message']);
+
 
 // Public Routes
 Route::get('/home', [PageController::class, 'home'])->name('home');

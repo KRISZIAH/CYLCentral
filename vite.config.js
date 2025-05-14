@@ -30,7 +30,11 @@ export default defineConfig({
                 'resources/css/auth-css/login.css',
                 'resources/css/partials-css/navbar.css',
                 'resources/js/partials-js/navbar.js',
-                'resources/css/partials-css/admin_sidebar.css'
+                'resources/css/partials-css/admin_sidebar.css',
+                'resources/js/main-js/cordibot.js',
+                'resources/css/main-css/cordibot.css',
+                'resources/css/main-css/eventregis.css',
+                'resources/js/main-js/eventregis.js'
             ],
             refresh: true,
         }),

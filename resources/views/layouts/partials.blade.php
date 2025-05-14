@@ -59,6 +59,8 @@
     @vite('resources/js/main-js/eventpages.js')
     @vite('resources/js/partials-js/navbar.js')
     @vite('resources/js/partials-js/footer.js')
+    @vite('resources/js/partials-js/cordibot.js')
+
 
     <!-- Bootstrap JS (Include before closing </body>) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

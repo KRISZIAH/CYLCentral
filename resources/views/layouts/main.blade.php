@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title') - CYLCentral</title>
 
 
@@ -34,6 +35,9 @@
     <!-- Styles for admin -->
     @vite('resources/css/admin-css/dashboard_analytics.css')
 
+    <!-- Cordibot styles -->
+    @vite('resources/css/main-css/cordibot.css')
+
 
     <!-- Bootstrap and Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -59,6 +63,9 @@
         @include('partials.footer')
     </footer>
 
+    <!-- Cordibot -->
+    @include('partials.cordibot')
+
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -74,6 +81,7 @@
     @vite('resources/js/main-js/eventregis.js')
     @vite('resources/js/partials-js/navbar.js')
     @vite('resources/js/partials-js/footer.js')
+    @vite('resources/js/main-js/cordibot.js')
 
 </body>
 </html>
